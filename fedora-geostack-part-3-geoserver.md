@@ -77,7 +77,7 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   
   ![Apache Tomcat 404](./img/print-servlet-404.jpg)
   
-  _Nggak usah_ panik, print servlet Anda hanya kurang aplikasi implementasinya. _Engine_-nya sendiri pasti sudah berjalan secara normal. Oleh sebab itu, mari kita sempurnakan instalasi/konfigurasinya.
+  :open_hands: _Nggak usah_ panik, :open_hands: print servlet Anda hanya kurang aplikasi implementasinya. _Engine_-nya sendiri pasti sudah berjalan secara normal. Oleh sebab itu, mari kita sempurnakan instalasi/konfigurasinya.
   
   ```
   [root@nusantara rinjani]# systemctl stop tomcat.service
