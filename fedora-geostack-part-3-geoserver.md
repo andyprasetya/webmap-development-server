@@ -145,7 +145,9 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   
   Anda bisa mencoba melakukan _print request_ dengan menyesuaikan _baseURL_-nya sesuai dengan URL GeoServer dan nama _workspace_ di dalamnya.
   
-  _Milestone_ dari _roadmap_ Part 3 ini adalah instalasi dan konfigurasi **Tile Server** alternatif. Tetapi karena GeoServer sudah memiliki kemampuan untuk _serving tiles_, maka lebih baik pembahasan Tile Server alternatif akan kita laksanakan pada bagian lain yang lebih lanjut. Sekedar rekomendasi, Tile Server alternatif yang sudah cukup _mature_ adalah [Tegola](https://tegola.io/) dan [Tilestrata](https://github.com/naturalatlas/tilestrata).
+  _Milestone_ dari _roadmap_ Part 3 ini adalah instalasi dan konfigurasi **Tile Server** alternatif. Tetapi karena GeoServer sudah memiliki kemampuan untuk _serving tiles_, maka lebih baik pembahasan Tile Server alternatif akan kita laksanakan pada bagian lain yang lebih lanjut.
+  
+  > Sekedar rekomendasi, Tile Server alternatif yang sudah cukup _mature_ adalah [Tegola](https://tegola.io/) dan [Tilestrata](https://github.com/naturalatlas/tilestrata).
   
 :grin: Sampai pada tahap ini, **GeoServer**, **MapFish Print** pada _geostack_ Anda sudah berfungsi sebagaimana seharusnya, walaupun belum "_nyaman-nyaman banget_" kalau digunakan, karena URL untuk mengakses seluruh layanan di GeoServer masih mengandung **_:8080_**. Pada bagian selanjutnya nanti akan kita bahas salah satu strategi pemanfaatan GeoServer secara publik, yaitu melalui _reverse-proxy_.
 
