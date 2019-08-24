@@ -149,7 +149,7 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   
   > Sekedar rekomendasi, Tile Server alternatif yang sudah cukup _mature_ adalah [Tegola](https://tegola.io/) dan [Tilestrata](https://github.com/naturalatlas/tilestrata).
   
-:grin: Sampai pada tahap ini, **GeoServer**, **MapFish Print** pada _geostack_ Anda sudah berfungsi sebagaimana seharusnya, walaupun belum "_nyaman-nyaman banget_" kalau digunakan, karena URL untuk mengakses seluruh layanan di GeoServer masih mengandung **_:8080_**. Pada bagian selanjutnya nanti akan kita bahas salah satu strategi pemanfaatan GeoServer secara publik, yaitu melalui _reverse-proxy_.
+:grin: Sampai pada tahap ini, **GeoServer** dan **MapFish Print** pada _geostack_ Anda sudah berfungsi sebagaimana seharusnya, walaupun belum "_nyaman-nyaman banget_" kalau digunakan, karena URL untuk mengakses seluruh layanan di GeoServer masih mengandung **_:8080_**. Pada bagian selanjutnya nanti akan kita bahas salah satu strategi pemanfaatan GeoServer secara publik, yaitu melalui _reverse-proxy_.
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda memahami bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
