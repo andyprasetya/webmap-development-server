@@ -1,7 +1,7 @@
 ### Part 2: Configuring Apache Tomcat for GeoServer
 
 Berikut ini adalah langkah-langkah untuk mengkonfigurasi Apache Tomcat sebagai _web container_ GeoServer.
-> **Asumsi:** Apache Tomcat sudah terinstall, mengacu pada Part 1.
+> **Asumsi:** Apache Tomcat sudah terinstall, mengacu pada [Part 1](./README.md).
 
 ##### 1. Mengganti _password_ Tomcat Webapps Admin:
   
