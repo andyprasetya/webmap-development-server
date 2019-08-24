@@ -1,9 +1,9 @@
 ### Part 3: GeoServer Installation / Configuration
 
 Berikut ini adalah langkah-langkah instalasi GeoServer pada Apache Tomcat.
-> **Asumsi:** Apache Tomcat sudah terinstall (mengacu pada Part 1), dan sudah berjalan sebagai _service daemon_ (mengacu pada Part 2).
+> **Asumsi \#1**: Apache Tomcat sudah terinstall (mengacu pada Part 1), dan sudah berjalan sebagai _service daemon_ (mengacu pada [Part 2](./fedora-geostack-part-2-apache-tomcat.md)).
 
-> GeoServer yang di-_deploy_ adalah versi GeoServer yang dijalankan di dalam _web container_ Apache Tomcat (format file: *.war).
+> **Asumsi \#2**: GeoServer yang di-_deploy_ adalah versi GeoServer yang dijalankan di dalam _web container_ Apache Tomcat (format file: *.war).
 
 ##### 1. Stop dulu _service_ Apache Tomcat-nya:
 
@@ -14,7 +14,7 @@ Berikut ini adalah langkah-langkah instalasi GeoServer pada Apache Tomcat.
   dan _download_ GeoServer versi _stable_ termutakhir dari [GeoServer.org](http://geoserver.org/release/stable/):
   
   ```
-  [rinjani@nusantara ~]$ wget http://sourceforge.net/projects/geoserver/files/GeoServer/\[version\]/geoserver-\[version\]-war.zip
+  [rinjani@nusantara ~]$ wget http://sourceforge.net/projects/geoserver/files/GeoServer/[version]/geoserver-[version]-war.zip
   ```
   
   > Upayakan untuk selalu men-_download_ versi termutakhir. Jadi, selalu cek URL _download_ di atas.
@@ -22,7 +22,7 @@ Berikut ini adalah langkah-langkah instalasi GeoServer pada Apache Tomcat.
 ##### 2. Ekstrak file ```geoserver.war```, pindahkan ke direktori ```/var/lib/tomcat/webapps```, dan ubah _file permission_-nya:
 
   ```
-  [rinjani@nusantara ~]$ unzip geoserver-\[version\]-war.zip
+  [rinjani@nusantara ~]$ unzip geoserver-[version]-war.zip
   
   [rinjani@nusantara ~]$ sudo mv geoserver.war /var/lib/tomcat/webapps/geoserver.war
   
@@ -55,7 +55,7 @@ Berikut ini adalah langkah-langkah instalasi GeoServer pada Apache Tomcat.
   [rinjani@nusantara ~]$ sudo systemctl start tomcat.service
   ```
   
-Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekatang sudah, membutuhkan layanan cetak peta untuk webmap Anda. Di sini Anda bisa menggunakan [MapFish Print](https://mapfish.github.io/mapfish-print-doc/index.html). Untuk download_-nya, Anda bisa memilih versi termutakhir dari [Maven repository](http://repo1.maven.org/maven2/org/mapfish/print/print-servlet/). Langsung kita mulai saja, dengan mengubah mode akses sebagai _superuser_:
+Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang sudah, membutuhkan layanan cetak peta untuk webmap Anda. Di sini Anda bisa menggunakan [MapFish Print](https://mapfish.github.io/mapfish-print-doc/index.html). Untuk download_-nya, Anda bisa memilih versi termutakhir dari [Maven repository](http://repo1.maven.org/maven2/org/mapfish/print/print-servlet/). Langsung kita mulai saja, dengan mengubah mode akses sebagai _superuser_:
 
   ```
   [rinjani@nusantara ~]$ sudo systemctl stop tomcat.service
