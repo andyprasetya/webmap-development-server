@@ -2,9 +2,9 @@
 
 Berikut ini adalah langkah-langkah instalasi sebuah _geostack_ berbasis Fedora Linux 29.
 
-> Asumsi \#1: Instalasi dari DVD/USB Flashdisk/ISO file (jika dijalankan di atas VirtualBox/VM Ware) sudah dilaksanakan, dengan tidak lupa untuk mengganti hostname dan setting IP address secara manual. Untuk menjalankan langkah-langkah post-install, sistem harus terhubung dengan Internet!
+> **Asumsi \#1**: Instalasi dari DVD/USB Flashdisk/ISO file (jika dijalankan di atas VirtualBox/VM Ware) sudah dilaksanakan, dengan tidak lupa untuk mengganti hostname dan setting IP address secara manual. Untuk menjalankan langkah-langkah post-install, sistem harus terhubung dengan Internet!
 
-> Asumsi \#2: Server IP address: **192.168.1.23/24**, hostname: **nusantara**, default user: **rinjani**.
+> **Asumsi \#2**: Server IP address: **192.168.1.23/24**, hostname: **nusantara**, default user: **rinjani**.
 
 ### Part 1: Post-Installation / OS Configuration
 
