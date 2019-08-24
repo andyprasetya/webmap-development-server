@@ -97,7 +97,7 @@ Hal ini dilakukan supaya seluruh fitur Apache Tomcat dapat diakses dari luar, se
   
   ![Apache Tomcat Landing Page](./img/apache-tomcat.jpg)
   
-  Jika _landing page_ Apache Tomcat sudah muncul, akses juga **Server Status**, **Manager App** dan **Host Manager** untuk memastikan apakah fitur-fitur tersebut sudah befungsi atau belum.
+  Jika _landing page_ Apache Tomcat sudah muncul, akses juga **Server Status**, **Manager App**, **Host Manager** dan **Examples** untuk memastikan apakah fitur-fitur tersebut sudah befungsi atau belum.
   
   :grin: Hingga pada tahap ini _geostack_ Anda sudah siap untuk instalasi GeoServer.
 
