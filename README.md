@@ -13,6 +13,8 @@
 
 > **Asumsi \#2**: Instalasi OS (Fedora Server versi 29) pada Webmap Development Server sudah dilaksanakan, dengan tidak lupa untuk mengganti hostname dan setting IP address secara manual, sehingga bisa diakses dari Development Workstation dengan menggunakan PuTTy atau WinSCP. Adapun mode instalasi OS yang disarankan adalah **Minimal Installation**. Untuk langkah-langkah instalasinya, Anda bisa mengacu pada [dokumentasi](https://docs.fedoraproject.org/en-US/fedora/f29/install-guide/)-nya di situs [Fedora](https://getfedora.org/).
 
+> Sebagai catatan tambahan, Anda bisa/boleh menggunakan [**Oracle VirtualBox**](https://www.virtualbox.org/) atau [**VMware Workstation Player**](https://www.vmware.com/id/products/workstation-player.html) untuk _hosting_ Fedora Linux-nya di workstation Anda.
+
 > Untuk menjalankan langkah-langkah post-install, sistem harus terhubung dengan Internet!
 
 Berikut ini adalah langkah-langkah membangun sebuah _geostack_ berbasis Fedora Linux 29 pada Webmap Development Server.
