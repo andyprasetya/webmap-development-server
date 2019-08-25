@@ -15,9 +15,7 @@
 
 > Sebagai catatan tambahan, Anda bisa/boleh menggunakan [**Oracle VirtualBox**](https://www.virtualbox.org/) atau [**VMware Workstation Player**](https://www.vmware.com/id/products/workstation-player.html) untuk _hosting_ Fedora Linux-nya di workstation Anda.
 
-> Untuk menjalankan langkah-langkah post-install, sistem harus terhubung dengan Internet!
-
-Berikut ini adalah langkah-langkah membangun sebuah _geostack_ berbasis Fedora Linux 29 pada Webmap Development Server.
+> Untuk menjalankan langkah-langkah _post-installation_, _ecosystem_ ini harus terhubung dengan Internet!
 
 ### Part 1: Post-Installation / OS Configuration
 
