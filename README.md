@@ -7,17 +7,27 @@
 ![Ecosystem](./img/dev-ecosystem.png)
 
 > dimana:
-> _Development workstation_ IP address: **192.168.1.2/24**, OS: **Windows 10**. Pada _workstation_ ini akan terpasang beberapa _software_ yang umum digunakan untuk webmap _development_, seperti [**Quantum GIS**](https://qgis.org/en/site/forusers/download.html), [**PostGIS Shapefile and DBF Loader/Exporter**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), [**Microsoft Visual Studio Code**](https://code.visualstudio.com/download) (atau [**Notepad++**](https://notepad-plus-plus.org/)), [**Postman**](https://www.getpostman.com/downloads/), [**PgAdmin**](https://www.pgadmin.org/download/pgadmin-4-windows/), [**MySQL Workbench**](https://dev.mysql.com/downloads/workbench/), [**SQLite DB Browser**](https://sqlitebrowser.org/), **PuTTy**](https://www.putty.org/) dan [**WinSCP**](https://winscp.net/eng/download.php).
+> _Development workstation_ IP _address_: **192.168.1.2/24**, OS: **Windows 10**. Pada _workstation_ ini akan terpasang beberapa _software_ yang umum digunakan untuk webmap _development_, seperti [**Quantum GIS**](https://qgis.org/en/site/forusers/download.html), [**PostGIS Shapefile and DBF Loader/Exporter**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), [**Microsoft Visual Studio Code**](https://code.visualstudio.com/download) (atau [**Notepad++**](https://notepad-plus-plus.org/)), [**Postman**](https://www.getpostman.com/downloads/), [**PgAdmin**](https://www.pgadmin.org/download/pgadmin-4-windows/), [**MySQL Workbench**](https://dev.mysql.com/downloads/workbench/), [**SQLite DB Browser**](https://sqlitebrowser.org/), [**PuTTy**](https://www.putty.org/) dan [**WinSCP**](https://winscp.net/eng/download.php).
 
-> Server IP address: **192.168.1.23/24**, hostname: **nusantara**, default user: **rinjani**.
+> Webmap Development Server IP _address_: **192.168.1.23/24**, hostname: **nusantara**, default user: **rinjani**.
 
-> **Asumsi \#2**: Instalasi dari DVD/USB Flashdisk/ISO file (jika dijalankan di atas VirtualBox/VM Ware) sudah dilaksanakan, dengan tidak lupa untuk mengganti hostname dan setting IP address secara manual. Untuk menjalankan langkah-langkah post-install, sistem harus terhubung dengan Internet!
+> **Asumsi \#2**: Instalasi OS (Fedora Server versi 29) pada Webmap Development Server sudah dilaksanakan, dengan tidak lupa untuk mengganti hostname dan setting IP address secara manual, sehingga bisa diakses dari Development Workstation dengan menggunakan PuTTy atau WinSCP. Adapun mode instalasi OS yang disarankan adalah **Minimal Installation**. Untuk langkah-langkah instalasinya, Anda bisa mengacu pada [dokumentasi](https://docs.fedoraproject.org/en-US/fedora/f29/install-guide/)-nya di situs [Fedora](https://getfedora.org/).
 
-Berikut ini adalah langkah-langkah membangun sebuah _geostack_ berbasis Fedora Linux 29.
+> Untuk menjalankan langkah-langkah post-install, sistem harus terhubung dengan Internet!
+
+Berikut ini adalah langkah-langkah membangun sebuah _geostack_ berbasis Fedora Linux 29 pada Webmap Development Server.
 
 ### Part 1: Post-Installation / OS Configuration
 
 #### 1. Login sebagai _administrator_ user
+
+  Aktifkan PuTTy pada workstation Anda, dan buka akses ke Webmap Development Server (host: 192.168.1.23, port: 22, user: rinjani), dan setelah muncul _shell_:
+  
+  ```
+  [rinjani@nusantara ~]$ 
+  ```
+  
+  masuk ke mode _superuser_ dan _update_ dulu sistemnya:
 
   ```
   [rinjani@nusantara ~]$ sudo su
