@@ -246,6 +246,50 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   [rinjani@nusantara ~]$ 
   ```
 
+##### 8. PostGIS Shapefile and DBF Loader/Exporter dan PgAdmin 4
+
+  Lakukan langkah-langkah ini di workstation Anda.
+  
+  FYI, PostGIS Shapefile and DBF Loader/Exporter adalah sebuah aplikasi sederhana yang menjadi bagian dari paket instalasi PostGIS. Instalasi PostGIS membutuhkan PostgreSQL yang sudah terinstall (dan aktif) sebelumnya. Nah, menurut opini saya, instalasi PostgreSQL dan PostGIS di workstation _nggak_ berguna, karena PostgreSQL dan PostGIS _toh_ sudah ada di server. Tapi ya mau gimana lagi? _Let's just do it!
+  
+  8.1. [**_Download_**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) installer PostgreSQL dari EnterpriseDB/EDB, dan install sampai selesai.
+  
+  8.2. Setelah instalasi PostgreSQL selesai, dari _Start menu_ jalankan **Application Stack Builder**.
+  
+  ![Application Stack Builder](./img/stack-builder-start.jpg)
+  
+  8.3. Pilih PostgreSQL 10 (x64) on port 5432. Jangan pilih yang <remote server>, karena pilihan ini selanjutnya tidak menyediakan opsi instalasi Spatial Extensions (PostGIS dll.).
+  
+  ![Application Stack Builder](./img/stack-builder-server.jpg)
+  
+  Tunggu beberapa saat, Application Stack Builder akan men-_download list_ aplikasi yang bisa Anda _install_ di tahap selanjutnya. Jika sudah muncul tampilan:
+  
+  ![Application Stack Builder](./img/stack-builder-select-app.jpg)
+  
+  8.4. Pilih **Npgsql**, **pgJDBC** dan **psqlODBC** pada kelompok **Database Drivers**, dan **PostGIS 2.5 Bundle for PostgreSQL 10 (64 bit)** pada kelompok **Spatial Extensions**.
+  
+  ![Application Stack Builder](./img/stack-builder-db-driver.jpg)
+  
+  ![Application Stack Builder](./img/stack-builder-postgis.jpg)
+  
+  Klik **Next**, dan tunggu beberapa saat hingga Application Stack Builder selesai men-_download_ dan meng-_install_ seluruh aplikasi yang sudah dipilih. Setelah selesai, keluar/matikan Application Stack Builder-nya dan buka _Start menu_.
+  
+  Pilih (atau cari dulu) menu **PostGIS 2.x Shapefile and DBF Loader Exporter**. Tampilan aplikasinya:
+  
+  ![Application Stack Builder](./img/postgis-loader-start.jpg)
+  
+  8.5. _Connection testing_ ke server dan mencoba _upload_ shapefile(s).
+  
+  Klik View connection details..., dan isikan Username: pgdbuser, Password: [_password_], Server Host: 192.168.1.23 dan port-nya: 5432, Database: webmap_db seperti ini:
+  
+  ![Application Stack Builder](./img/postgis-loader-connect-box.jpg)
+  
+  Jika koneksinya sukses, maka pada bagian Log Window akan muncul log yang mengkonfirmasi bahwa koneksi berhasil.
+  
+  ![Application Stack Builder](./img/postgis-loader-connection-success.jpg)
+  
+  Jika koneksi gagal, periksa kembali pengaturan koneksinya.
+
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
