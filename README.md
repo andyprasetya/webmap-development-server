@@ -168,12 +168,6 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   [rinjani@nusantara ~]$ sudo dnf install mysql-community-server mysql-community-client mysql-community-common mysql-community-libs mysql-community-test mysql-community-devel
   ```
   
-  > **Catatan**: Jika diinstall di Fedora Workstation (yang memiliki GUI Gnome 2), maka dapat juga langsung menginstall **MySQL Workbench** dan **SQLite DB Browser**:
-  
-  ```
-  [rinjani@nusantara ~]$ sudo dnf install mysql-community-server mysql-community-client mysql-community-common mysql-community-libs mysql-community-test mysql-community-devel mysql-workbench-community sqlitebrowser
-  ```
-  
   ##### 3.10. Install Apache Tomcat:
   
   ```
@@ -190,6 +184,12 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   
   ```
   [rinjani@nusantara ~]$ sudo dnf install composer samba* nginx pure-ftpd nodejs golang
+  
+  [rinjani@nusantara ~]$ sudo npm install -g nodemon
+  
+  [rinjani@nusantara ~]$ sudo curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+  
+  [rinjani@nusantara ~]$ sudo dnf install yarn
   ```
 
 :grin: Sampai pada tahap ini, _geostack_ Anda sudah siap untuk dikonfigurasi seluruh komponen terkait nya.
