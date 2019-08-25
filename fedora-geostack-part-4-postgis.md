@@ -280,7 +280,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![Application Stack Builder](./img/postgis-loader-start.jpg)
   
-  8.5. _Connection testing_ ke server dan mencoba _upload_ shapefile(s).
+  8.5. _Connection testing_ ke server.
   
   Klik **View connection details...**, dan isikan Username: **pgdbuser**, Password: [_password_], Server Host: **192.168.1.23** dan port-nya: **5432**, Database: **webmap_db** seperti ini:
   
