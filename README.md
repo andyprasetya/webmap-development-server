@@ -1,7 +1,5 @@
 ## Membangun GeoStack untuk Webmap Development Berbasis Fedora Linux
 
-
-
 > **Asumsi \#1**: Skenario _development ecosystem_ akan kita bangun adalah:
 
 ![Ecosystem](./img/dev-ecosystem.png)
