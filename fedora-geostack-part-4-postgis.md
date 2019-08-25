@@ -254,11 +254,13 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   8.1. [**_Download_**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) installer PostgreSQL dari EnterpriseDB/EDB, dan install sampai selesai.
   
+  > Jika Anda akan langsung melakukan shapefile _upload test_, Anda bisa men-_download_ 1 file dari situs [**Natural Earth**](https://www.naturalearthdata.com/). Ambil contoh, [**batas administrasi negara level 0**](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip).
+  
   8.2. Setelah instalasi PostgreSQL selesai, dari _Start menu_ jalankan **Application Stack Builder**.
   
   ![Application Stack Builder](./img/stack-builder-start.jpg)
   
-  8.3. Pilih PostgreSQL 10 (x64) on port 5432. Jangan pilih yang **\<remote server\>**, karena pilihan ini selanjutnya tidak menyediakan opsi instalasi Spatial Extensions (PostGIS dll.).
+  8.3. Pilih **PostgreSQL 10 (x64) on port 5432**. Jangan pilih yang **\<remote server\>**, karena pilihan ini selanjutnya tidak menyediakan opsi instalasi Spatial Extensions (PostGIS dll.).
   
   ![Application Stack Builder](./img/stack-builder-select-server.jpg)
   
