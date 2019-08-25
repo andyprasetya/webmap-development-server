@@ -250,7 +250,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
 
   Lakukan langkah-langkah ini di workstation Anda.
   
-  FYI, PostGIS Shapefile and DBF Loader/Exporter adalah sebuah aplikasi sederhana yang menjadi bagian dari paket instalasi PostGIS. Instalasi PostGIS membutuhkan PostgreSQL yang sudah terinstall (dan aktif) sebelumnya. Nah, menurut opini saya, instalasi PostgreSQL dan PostGIS di workstation _nggak_ berguna, karena PostgreSQL dan PostGIS _toh_ sudah ada di server. Tapi ya mau gimana lagi? _Let's just do it!
+  FYI, PostGIS Shapefile and DBF Loader/Exporter adalah sebuah aplikasi sederhana yang menjadi bagian dari paket instalasi PostGIS. Instalasi PostGIS membutuhkan PostgreSQL yang sudah terinstall (dan aktif) sebelumnya. Nah, menurut opini saya, instalasi PostgreSQL dan PostGIS di workstation _nggak_ berguna, karena PostgreSQL dan PostGIS _toh_ sudah ada di server. Tapi ya... mau gimana lagi? _Let's just do it!_
   
   8.1. [**_Download_**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) installer PostgreSQL dari EnterpriseDB/EDB, dan install sampai selesai.
   
@@ -258,9 +258,9 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![Application Stack Builder](./img/stack-builder-start.jpg)
   
-  8.3. Pilih PostgreSQL 10 (x64) on port 5432. Jangan pilih yang <remote server>, karena pilihan ini selanjutnya tidak menyediakan opsi instalasi Spatial Extensions (PostGIS dll.).
+  8.3. Pilih PostgreSQL 10 (x64) on port 5432. Jangan pilih yang **\<remote server\>**, karena pilihan ini selanjutnya tidak menyediakan opsi instalasi Spatial Extensions (PostGIS dll.).
   
-  ![Application Stack Builder](./img/stack-builder-server.jpg)
+  ![Application Stack Builder](./img/stack-builder-select-server.jpg)
   
   Tunggu beberapa saat, Application Stack Builder akan men-_download list_ aplikasi yang bisa Anda _install_ di tahap selanjutnya. Jika sudah muncul tampilan:
   
@@ -280,7 +280,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   8.5. _Connection testing_ ke server dan mencoba _upload_ shapefile(s).
   
-  Klik View connection details..., dan isikan Username: pgdbuser, Password: [_password_], Server Host: 192.168.1.23 dan port-nya: 5432, Database: webmap_db seperti ini:
+  Klik **View connection details...**, dan isikan Username: **pgdbuser**, Password: [_password_], Server Host: **192.168.1.23** dan port-nya: **5432**, Database: **webmap_db** seperti ini:
   
   ![Application Stack Builder](./img/postgis-loader-connect-box.jpg)
   
