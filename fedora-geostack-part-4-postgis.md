@@ -200,9 +200,13 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   > _Entry_ ini mengasumsikan server Anda memiliki IP address 192.168.1.xxx/24.
   
-  Save + exit, dan aktifkan kembali PostgreSQL:
+  Save + exit, buka port **5432** di _firewalld_ dan aktifkan kembali PostgreSQL:
   
   ```
+  [rinjani@nusantara ~]$ sudo firewall-cmd --permanent --zone=FedoraServer --add-port=5432/tcp
+  
+  [rinjani@nusantara ~]$ sudo firewall-cmd --reload
+  
   [rinjani@nusantara ~]$ sudo systemctl start postgresql.service
   ```
 
