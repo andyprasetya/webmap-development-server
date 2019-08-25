@@ -41,7 +41,7 @@ Berikut ini adalah langkah-langkah membangun sebuah _geostack_ berbasis Fedora L
   
 #### 2. Disabling SELinux
 
-Langkah ini ditempuh supaya handling _filesystem_ tidak _ribet_. Walaupun SELinux bersifat _mandatory_ untuk production server, tapi untuk sementara dapat diabaikan dulu.
+Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan adalah men-_disable_ fitur SELinux. Langkah ini ditempuh supaya handling _filesystem_ tidak _ribet_. Walaupun SELinux bersifat _mandatory_ untuk production server, tapi untuk sementara dapat diabaikan dulu.
 
   ```
   [rinjani@nusantara ~]$ sudo nano /etc/sysconfig/selinux
