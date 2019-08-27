@@ -23,7 +23,7 @@ Tapi kalau nggak dimulai sekarang juga, ya kapan terwujudnya? Keburu disamber sa
 
 #### 1. Login sebagai _administrator_ user
 
-  Aktifkan **PuTTy** pada workstation Anda, dan buka akses ke **Webmap Development Server** (host: **192.168.1.23**, port: **22**, user: **rinjani**, password: hanya Tuhan dan Anda yang tahu), dan setelah muncul _shell_:
+  Aktifkan **PuTTy** pada workstation Anda, dan buka akses ke **Webmap Development Server** (host: **192.168.1.23**, port: **22**, user: **rinjani**), dan setelah Anda masukkan _password_-nya muncul _shell_:
   
   ```
   [rinjani@nusantara ~]$ 
