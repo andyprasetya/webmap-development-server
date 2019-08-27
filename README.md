@@ -1,8 +1,8 @@
 ## Membangun GeoStack untuk Webmap Development Berbasis Fedora Linux
 
-Tugas embangun _backend system_ untuk sebuah webmap _project_ adalah sebuah tedious work dan seringkali menjadi _"lempar-lemparan"_ antara _GIS Specialists_ dan staf TI (mulai dari _devops_, _system administrators_, _techleads_, hingga _programmers_). Orang GIS _bilang_: _"...wah, itu yang tahu dan bisa orang TI."_ Sementara orang TI juga bilang: _"...saya nggak tau geografi. Kerjaan itu sudah sangat spesifik. Coba tanya sama orang-orang GIS."_ -- Wah, kalau _gini_ caranya, bakalan _nggak_ selesai-selesai webmap _project_-nya. Dan ini belum sampai ke pertanyaan yang lebih klasik lagi: _"...yang tugas maintain sistemnya siapa nih?"_, saat sistemnya _trouble_. Membingungkan dan _overwhelming_, tapi ini sering sekali terjadi.
+Tugas membangun _backend system_ untuk sebuah webmap _project_ adalah sebuah _tedious work_ dan seringkali menjadi _"lempar-lemparan"_ antara _GIS Specialists_ dan staf TI (mulai dari _devops_, _system administrators_, _techleads_, hingga _programmers_). Orang GIS _bilang_: _"...wah, itu yang tahu dan bisa orang TI."_ Sementara orang TI juga bilang: _"...saya nggak tau geografi. Kerjaan itu sudah sangat spesifik. Coba tanya sama orang-orang GIS."_ -- Wah, kalau _gini_ caranya, _bakalan nggak_ selesai-selesai webmap _project_-nya. Dan ini belum sampai ke pertanyaan yang lebih klasik lagi: _"...yang tugas maintain sistemnya siapa nih?"_, saat sistemnya _trouble_. Membingungkan dan _overwhelming_, tapi ini sering sekali terjadi.
 
-Tapi kalau nggak dimulai sekarang juga, ya kapan terwujudnya? Keburu disamber sama tuan singh dan konco-konconya nanti. Let's make a quickstart, _berdarah-darah dikit_ dulu _nggak_ apa-apa, asal _gelmu_ geomatika kita terus berkembang maju!
+Tapi kalau nggak dimulai sekarang juga, ya kapan terwujudnya? Keburu disamber sama "tuan singh" dan _konco-konco_-nya nanti. _Let's make a quickstart_, _berdarah-darah dikit_ dulu _nggak_ apa-apa, asal _gelmu_ geomatika kita terus berkembang maju!
 
 > **Asumsi \#1**: Skenario _development ecosystem_ akan kita bangun adalah:
 
@@ -23,7 +23,7 @@ Tapi kalau nggak dimulai sekarang juga, ya kapan terwujudnya? Keburu disamber sa
 
 #### 1. Login sebagai _administrator_ user
 
-  Aktifkan PuTTy pada workstation Anda, dan buka akses ke Webmap Development Server (host: 192.168.1.23, port: 22, user: rinjani), dan setelah muncul _shell_:
+  Aktifkan **PuTTy** pada workstation Anda, dan buka akses ke **Webmap Development Server** (host: **192.168.1.23**, port: **22**, user: **rinjani**, password: hanya Tuhan dan Anda yang tahu), dan setelah muncul _shell_:
   
   ```
   [rinjani@nusantara ~]$ 
