@@ -399,6 +399,49 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   ![PgAdmin 4](./img/pgadmin4-geometry-viewer-map.jpg)
   
   Sebagai catatan, _basemap_ dari [**OpenStreetMap**]() hanya akan muncul apabila SRID-nya **EPSG 4326**. Saya belum mencoba untuk **EPSG 3857** atau lainnya. Untuk lebih jelasnya mengenai perbedaan antara **EPSG 4326** dan **EPSG 3857**, dapat Anda baca di artikel bertajuk [EPSG 4326 vs EPSG 3857](https://lyzidiamond.com/posts/4326-vs-3857) ini.
+  
+##### 9. GeoServer WMS/WFS Services
+
+  _Test_ kemampuan **Webmap Development Server** selanjutnya adalah **WMS/WFS services**. Untuk melakukan _test_ ini, Anda bisa memulainya dengan membuat **WMS/WFS services** melalui **GeoServer** yang sudah aktif di **Webmap Development Server** Anda. Langkah-langkahnya adalah sebagai berikut:
+  
+  9.1. Buka **GeoServer** di _browser_ Anda, dan _login_ sebagai **admin**.
+  
+  9.2. _Create **Workspace**_.
+  
+  ![GeoServer WMS/WFS](./img/geoserver-01-create-workspace.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-02-new-workspace.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-03-list-workspace.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-04-edit-workspace.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-05-create-store.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-06-available-data-store.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-07-postgis-connection.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-08-new-layer.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-09-data.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-10-srs-handling.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-11-bbox.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-12-computed-bbox.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-13-publishing.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-14-save.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-15-layers.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-16-openlayers.jpg)
+  
+  ![GeoServer WMS/WFS](./img/geoserver-17-preview.jpg)
+  
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 

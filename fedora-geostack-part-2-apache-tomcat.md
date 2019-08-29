@@ -93,7 +93,7 @@ Hal ini dilakukan supaya seluruh fitur Apache Tomcat dapat diakses dari luar, se
   [rinjani@nusantara ~]$ sudo systemctl start tomcat.service
   ```
   
-  Untuk memastikan Apache Tomcat sudah berjalan dan berfungsi secara keseluruhan, buka browser Anda dan buka URL ```http://localhost:8080``` atau ```http://192.168.1.23:8080```.
+  Untuk memastikan Apache Tomcat sudah berjalan dan berfungsi secara keseluruhan, buka browser Anda dan buka URL ```http://192.168.1.23:8080```.
   
   ![Apache Tomcat Landing Page](./img/apache-tomcat.jpg)
   

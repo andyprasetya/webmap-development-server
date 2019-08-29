@@ -37,7 +37,7 @@ Berikut ini adalah langkah-langkah instalasi GeoServer pada Apache Tomcat.
   [rinjani@nusantara ~]$ sudo systemctl start tomcat.service
   ```
   
-  Tunggu 5-10 detik, dan akses GeoServer melalui _browser_ pada URL ```http://localhost:8080/geoserver/``` atau ```http://192.168.1.23:8080/geoserver/```.
+  Tunggu 5-10 detik, dan akses GeoServer melalui _browser_ pada URL ```http://192.168.1.23:8080/geoserver/```.
   
   ![GeoServer Landing Page](./img/geoserver-landing-page.jpg)
   
@@ -73,7 +73,7 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   [root@nusantara rinjani]# systemctl start tomcat.service
   ```
   
-  Jika Anda mengakses URL ```http://localhost:8080/print-servlet-3.9.0/``` atau ```http://192.168.1.23:8080/print-servlet-3.9.0/```, maka Anda akan menjumpai Apache Tomcat _404 page_!
+  Jika Anda mengakses URL ```http://192.168.1.23:8080/print-servlet-3.9.0/```, maka Anda akan menjumpai Apache Tomcat _404 page_!
   
   ![Apache Tomcat 404](./img/print-servlet-404.jpg)
   
@@ -139,7 +139,7 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   [root@nusantara rinjani]# systemctl start tomcat.service
   ```
   
-  Sekarang cek ke URL ```http://localhost:8080/print-servlet-3.9.0/``` atau ```http://192.168.1.23:8080/print-servlet-3.9.0/```, maka MapFish Print-nya sudah bisa berjalan normal.
+  Sekarang cek ke URL ```http://192.168.1.23:8080/print-servlet-3.9.0/```, maka MapFish Print-nya sudah bisa berjalan normal.
   
   ![MapFish Print Test Page](./img/print-servlet-test-page.jpg)
   
