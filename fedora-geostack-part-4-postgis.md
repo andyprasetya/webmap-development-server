@@ -252,15 +252,15 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   FYI, PostGIS Shapefile and DBF Loader/Exporter adalah sebuah aplikasi sederhana yang menjadi bagian dari paket instalasi PostGIS. Instalasi PostGIS membutuhkan PostgreSQL yang sudah terinstall (dan aktif) sebelumnya. Nah, menurut opini saya, instalasi PostgreSQL dan PostGIS di workstation _nggak_ berguna, kecuali hanya untuk _"memancing"_ instalasi **Application Stack Builder**, biar bisa install PostGIS yang mana di proses instalasinya akan mengikutkan **PostGIS Shapefile and DBF Loader Exporter**. PostgreSQL dan PostGIS _toh_ sudah ada di server. Tapi ya... mau _gimana_ lagi? _Let's just do it!_
   
-  8.1. [**_Download_**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) installer PostgreSQL dari EnterpriseDB/EDB, dan install sampai selesai.
+  ##### 8.1. [**_Download_**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) installer PostgreSQL dari EnterpriseDB/EDB, dan install sampai selesai.
   
   > Jika Anda akan langsung melakukan shapefile _upload test_, Anda bisa men-_download_ 1 file dari situs [**Natural Earth**](https://www.naturalearthdata.com/). Ambil contoh, [**batas administrasi negara level 0**](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip).
   
-  8.2. Setelah instalasi PostgreSQL selesai, dari _Start menu_ jalankan **Application Stack Builder**.
+  ##### 8.2. Setelah instalasi PostgreSQL selesai, dari _Start menu_ jalankan **Application Stack Builder**.
   
   ![Application Stack Builder](./img/stack-builder-start.jpg)
   
-  8.3. Pilih **PostgreSQL 10 (x64) on port 5432**, dan klik **Next \>**. Jangan pilih yang **\<remote server\>** yaa..., karena pilihan ini selanjutnya tidak menyediakan opsi instalasi Spatial Extensions (PostGIS dll.).
+  ##### 8.3. Pilih **PostgreSQL 10 (x64) on port 5432**, dan klik **Next \>**. Jangan pilih yang **\<remote server\>** yaa..., karena pilihan ini selanjutnya tidak menyediakan opsi instalasi Spatial Extensions (PostGIS dll.).
   
   ![Application Stack Builder](./img/stack-builder-select-server.jpg)
   
@@ -268,7 +268,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![Application Stack Builder](./img/stack-builder-select-app.jpg)
   
-  8.4. Pilih **Npgsql**, **pgJDBC** dan **psqlODBC** pada kelompok **Database Drivers**, dan **PostGIS 2.5 Bundle for PostgreSQL 10 (64 bit)** pada kelompok **Spatial Extensions**.
+  ##### 8.4. Pilih **Npgsql**, **pgJDBC** dan **psqlODBC** pada kelompok **Database Drivers**, dan **PostGIS 2.5 Bundle for PostgreSQL 10 (64 bit)** pada kelompok **Spatial Extensions**.
   
   ![Application Stack Builder](./img/stack-builder-db-driver.jpg)
   
@@ -280,7 +280,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![PostGIS Shapefile DBF Loader](./img/postgis-loader-start.jpg)
   
-  8.5. _Connection testing_ ke server.
+  ##### 8.5. _Connection testing_ ke server.
   
   Klik **View connection details...**, dan isikan Username: **pgdbuser**, Password: [_password_], Server Host: **192.168.1.23** dan port-nya: **5432**, Database: **webmap_db** seperti ini:
   
@@ -316,7 +316,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   Sampai pada tahap ini, di PostgreSQL/PostGIS server sudah ada contoh geodata yang sudah siap diakses dari berbagai kanal.
   
-  8.6. Testing PostGIS Layer di Quantum GIS.
+  ##### 8.6. Testing PostGIS Layer di Quantum GIS.
   
   _Test_ mengakses PostGIS _layer_ yang paling sederhana adalah dengan menggunakan **Quantum GIS**. Aktifkan Quantum GIS Anda, buat _project_ baru, kemudian klik menu **Layer** -\> **Data Source Manager**:
   
@@ -348,7 +348,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   Jika _layer_ **ne_10m_admin_0_countries** sudah muncul, maka test PostGIS _layer_ Anda sudah berhasil.
   
-  8.7. PgAdmin 4
+  ##### 8.7. PgAdmin 4
   
   Instalasi **PgAdmin 4** sangat mudah. Anda tinggal men-_download_-nya dari [download page](https://www.pgadmin.org/download/) di situsnya, dan laksanakan proses instalasi di **workstation** hingga selesai. Sebagai catatan, Anda akan diminta untuk membuat **master password**, yaitu _password_ yang digunakan saat pertama kali mengakses **PgAdmin 4** di _workstation_ Anda.
   
@@ -404,9 +404,9 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
 
   _Test_ kemampuan **Webmap Development Server** selanjutnya adalah **WMS/WFS services**. Untuk melakukan _test_ ini, Anda bisa memulainya dengan membuat **WMS/WFS services** melalui **GeoServer** yang sudah aktif di **Webmap Development Server** Anda. Langkah-langkahnya adalah sebagai berikut:
   
-  9.1. Buka **GeoServer** di _browser_ Anda, dan _login_ sebagai **admin**.
+  ##### 9.1. Buka **GeoServer** di _browser_ Anda, dan _login_ sebagai **admin**.
   
-  9.2. _Create **Workspace**_.
+  ##### 9.2. _Create **Workspace**_.
   
   Pada bagian menu utama, (**1**) klik **Workspaces**, sehingga tampilan _list_ seluruh _workspace_ yang ada muncul, dan (**2**) klik **Add new workspace**.
   
