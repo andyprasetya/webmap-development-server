@@ -278,17 +278,17 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   Pilih (atau cari dulu) menu **PostGIS 2.x Shapefile and DBF Loader Exporter**. Tampilan aplikasinya:
   
-  ![Application Stack Builder](./img/postgis-loader-start.jpg)
+  ![PostGIS Shapefile DBF Loader](./img/postgis-loader-start.jpg)
   
   8.5. _Connection testing_ ke server.
   
   Klik **View connection details...**, dan isikan Username: **pgdbuser**, Password: [_password_], Server Host: **192.168.1.23** dan port-nya: **5432**, Database: **webmap_db** seperti ini:
   
-  ![Application Stack Builder](./img/postgis-loader-connect-box.jpg)
+  ![PostGIS Shapefile DBF Loader](./img/postgis-loader-connect-box.jpg)
   
   Jika koneksinya sukses, maka pada bagian **Log Window** akan muncul log yang mengkonfirmasi bahwa koneksi berhasil.
   
-  ![Application Stack Builder](./img/postgis-loader-connection-success.jpg)
+  ![PostGIS Shapefile DBF Loader](./img/postgis-loader-connection-success.jpg)
   
   Jika koneksi gagal, periksa kembali pengaturan koneksinya.
   
@@ -300,19 +300,19 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   Kembali ke tampilan **PostGIS Shapefile and DBF Loader Exporter**, langsung saja klik **Add File**, maka dialog **Select a Shape file** muncul, pilih (klik) shapefile yang akan di-_upload_, dan klik **Open**.
   
-  ![Application Stack Builder](./img/postgis-loader-select-shapefile-box.jpg)
+  ![PostGIS Shapefile DBF Loader](./img/postgis-loader-select-shapefile-box.jpg)
   
   Setelah klik **Open**, maka shapefile tersebut akan masuk ke **Import List**. Dalam tampilan ini mari kita fokus ke boks merah, yaitu kolom **SRID**.
   
-  ![Application Stack Builder](./img/postgis-loader-srid-column.jpg)
+  ![PostGIS Shapefile DBF Loader](./img/postgis-loader-srid-column.jpg)
   
   Klik angka **0** dalam kolom, dan isi dengan angka **4326**, dan klik pada ruang kosong dalam **Import List**, di bawah _entry_ shapefile-nya. Untuk nama **Table** dan **Geo Column** yang akan jadi target di PostgreSQL/PostGIS biarkan saja apa-adanya.
   
-  ![Application Stack Builder](./img/postgis-loader-4326.jpg)
+  ![PostGIS Shapefile DBF Loader](./img/postgis-loader-4326.jpg)
   
   Selanjutnya klik **Import**, dan tunggu beberapa saat sampai selesai. Jika tidak ada _error_ saat proses _upload_, maka setelah selesai di **Log Window**-nya akan muncul konfirmasi bahwa _upload_ shapefile-nya berhasil.
   
-  ![Application Stack Builder](./img/postgis-loader-import-completed.jpg)
+  ![PostGIS Shapefile DBF Loader](./img/postgis-loader-import-completed.jpg)
   
   Sampai pada tahap ini, di PostgreSQL/PostGIS server sudah ada contoh geodata yang sudah siap diakses dari berbagai kanal.
   
@@ -320,15 +320,15 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   _Test_ mengakses PostGIS _layer_ yang paling sederhana adalah dengan menggunakan **Quantum GIS**. Aktifkan Quantum GIS Anda, buat _project_ baru, kemudian klik menu **Layer** -\> **Data Source Manager**:
   
-  ![Application Stack Builder](./img/qgis-open-dsm.jpg)
+  ![QGIS PostGIS Layer](./img/qgis-open-dsm.jpg)
   
   Setelah dialog **Data Source Manager** muncul, klik **PostgreSQL** pada bagian kiri, sehingga muncul tampilan koneksi ke PostgreSQL di bagian kanan, dan pada bagian **Connections**, klik **New**:
   
-  ![Application Stack Builder](./img/qgis-dsm-dialog.jpg)
+  ![QGIS PostGIS Layer](./img/qgis-dsm-dialog.jpg)
   
   Setelah Anda klik **New**, maka akan muncul dialog **Create a New PostGIS Connection**.
   
-  ![Application Stack Builder](./img/qgis-create-connection.jpg)
+  ![QGIS PostGIS Layer](./img/qgis-create-connection.jpg)
   
   > Pada bagian **Connection Information**, isi Name: **webmap_db@192.168.1.23** (atau yang lain sesuka Anda), **Service** dibiarkan kosong saja, Host: **192.168.1.23**, Port: **5432** dan Database: **webmap_db**.
   
@@ -340,15 +340,65 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   Setelah Anda klik **OK**, maka _table_ yang tadi sudah terbentuk saat kita meng-_upload_ shapefile akan muncul sebagai pilihan _layer_ yang akan ditampilkan.
   
-  ![Application Stack Builder](./img/qgis-select-layers.jpg)
+  ![QGIS PostGIS Layer](./img/qgis-select-layers.jpg)
   
   Klik (pilih) pada _table_ tersebut, kemudian klik **Add** pada bagian bawah dan tunggu sejenak hingga tampilan _layer_-nya muncul di belakang dialog **Data Source Manager** ini. Selanjutnya klik **Close**.
   
-  ![Application Stack Builder](./img/qgis-postgis-layer-loaded.jpg)
+  ![QGIS PostGIS Layer](./img/qgis-postgis-layer-loaded.jpg)
   
   Jika _layer_ **ne_10m_admin_0_countries** sudah muncul, maka test PostGIS _layer_ Anda sudah berhasil.
   
   8.7. PgAdmin 4
+  
+  Instalasi PgAdmin 4 sangat mudah. Anda tinggal men-download-nya dari download page di situsnya, dan laksanakan proses instalasi di workstation hingga selesai. Sebagai catatan, Anda akan diminta untuk membuat master password, yaitu password yang digunakan saat pertama kali mengakses PgAdmin 4 di workstation Anda.
+  
+  ![PgAdmin 4](./img/pgadmin4-master-password.jpg)
+  
+  Setelah Anda berhasil masuk ke PgAdmin 4, maka yang pertama kali harus dilakukan adalah _create connection_ ke server PostgreSQL yang akan Anda akses.
+  
+  ![PgAdmin 4](./img/pgadmin4-create.jpg)
+  
+  Pada _dialog_ ini, di _tab_ **General** kita isi **Name** dengan **Webmap Development Server** (atau sesuka Anda), kemudian _checkbox_ **Connect now?**-nya kita _check_, dan **Comments**-nya kita isi dengan deskripsi koneksinya.
+  
+  ![PgAdmin 4](./img/pgadmin4-create-general.jpg)
+  
+  Pindah ke _tab_ **Connection**, kita isi **Host name/address** dengan **192.168.1.23** (IP server PostgreSQL-nya), **Port**: **5432**, **Username**: **pgdbadmin** (biar bisa mengakses seluruh database yang ada), dan _password_-nya. _Checkbox_ Save **Password?**-nya boleh di-_check_, tapi lebih baik dibiarkan _unchecked_ saja, sehingga setiap kali koneksi Anda akan diminta untuk memasukkan _password_.
+  
+  ![PgAdmin 4](./img/pgadmin4-create-connection.jpg)
+  
+  Kalau seluruh isian kita sudah benar, maka begitu kita klik Save, maka entry Webmap Development Server akan muncul di pilihan server pada PgAdmin 4:
+  
+  ![PgAdmin 4](./img/pgadmin4-connection-created.jpg)
+  
+  Waktu kita _unfold entry_ ini, maka akan muncul pilihan akses ke **Databases**, **Login/Group Roles** dan **Tablespaces**. Selanjutnya, kita akan fokus ke **Databases** dulu.
+  
+  ![PgAdmin 4](./img/pgadmin4-connection-collapsed.jpg)
+  
+  Setelah kita _unfold_ **Databases**, maka akan terlihat **3** _database_, yaitu **postgres** (_default database_, yang digunakan oleh PostgreSQL), **postgis_template** (_database_ yang sudah kita _create_ sebelumnya dan kita fungsikan sebagai _template database_) dan **webmap_db** (_database_ yang akan kita akses selanjutnya).
+  
+  ![PgAdmin 4](./img/pgadmin4-collapsed-show-db.jpg)
+  
+  Masuk ke **webmap_db** -\> **Schemas** -\> **public** -\> **Tables**, maka akan terlihat _table_ bernama **ne_10m_admin_0_countries**, yang mana itu adalah hasil _upload_ shapefile yang sudah kita laksanakan pada bagian sebelumnya.
+  
+  ![PgAdmin 4](./img/pgadmin4-show-tables.jpg)
+  
+  Klik-kanan pada _table_ tersebut (**_ne_10m_admin_0_countries_**), pilih **View/Edit Data** -\> **All Rows**:
+  
+  ![PgAdmin 4](./img/pgadmin4-right-click-on-table.jpg)
+  
+  Maka selanjutnya pada bagian kanan (tampilan utama) dari PgAdmin 4 akan muncul tampilan _query_ dan seluruh _rows_ yang ada dalam _table_ **_ne_10m_admin_0_countries_**.
+  
+  ![PgAdmin 4](./img/pgadmin4-show-all-entries.jpg)
+  
+  Menariknya pada PgAdmin 4 ini, jika Anda _scroll_ ke kanan terus hingga akhir _table_, akan ada sebuah _button_ yang berfungsi untuk menampilkan/visualisasi data _geometry_-nya.
+  
+  ![PgAdmin 4](./img/pgadmin4-geometry-viewer-button.jpg)
+  
+  Kalau di-klik _geometry viewer button_ ini, maka selanjutnya akan muncul _webmap_ berbasis [**Leaflet.JS**](https://leafletjs.com/) yang menampilkan data _geometry_-nya.
+  
+  ![PgAdmin 4](./img/pgadmin4-geometry-viewer-map.jpg)
+  
+  > Sebagai catatan, _basemap_ dari [**OpenStreetMap**]() hanya akan muncul apabila SRID-nya **EPSG 4326**. Saya belum mencoba untuk **EPSG 3857** atau lainnya. Untuk lebih jelasnya mengenai perbedaan antara **EPSG 4326** dan **EPSG 3857**, dapat Anda baca di artikel bertajuk [EPSG 4326 vs EPSG 3857](https://lyzidiamond.com/posts/4326-vs-3857).
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
