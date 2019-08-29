@@ -485,6 +485,32 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   Hingga tahap ini, **WMS/WFS _services_** pada **GeoServer** Anda yang terhubung dengan **PostgreSQL/PostGIS** sudah siap diakses dengan menggunakan aplikasi lain, seperti **Quantum GIS** atau langsung ditampilkan dalam sebuah _webmap_ dengan menggunakan JavaScript _library_ seperti [**OpenLayers**](https://openlayers.org) atau [**Leaflet.JS**](https://leafletjs.com/).
   
 #### 10. WMS/WFS Layer di Quantum GIS.
+  
+  --
+  
+  ![Quantum GIS WMS Layer](./img/qgis-wms-01-add-layer.jpg)
+  
+  --
+  
+  ![Quantum GIS WMS Layer](./img/qgis-wms-02-create-connection.jpg)
+  
+  --
+  
+  ![Quantum GIS WMS Layer](./img/qgis-wms-03-create-wms.jpg)
+  
+  --
+  
+  ![Quantum GIS WMS Layer](./img/qgis-wms-04-connect.jpg)
+  
+  --
+  
+  ![Quantum GIS WMS Layer](./img/qgis-wms-05-add-close.jpg)
+  
+  --
+  
+  ![Quantum GIS WMS Layer](./img/qgis-wms-06-map-loaded.jpg)
+  
+  --
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
