@@ -408,40 +408,83 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   9.2. _Create **Workspace**_.
   
+  Pada bagian menu utama, (**1**) klik **Workspaces**, sehingga tampilan _list_ seluruh _workspace_ yang ada muncul, dan (**2**) klik **Add new workspace**.
+  
   ![GeoServer WMS/WFS](./img/geoserver-01-create-workspace.jpg)
+  
+  Pada tampilan **New Workspace**, isi **Name**: **webmap**, dan **Namespace URI**: **http://webmap.mysite.com/webmap**. Sebagai catatan, nama _workspace_ hanya dibatasi hingga **10 karakter** saja oleh GeoServer-nya.
   
   ![GeoServer WMS/WFS](./img/geoserver-02-new-workspace.jpg)
   
+  Setelah Anda klik **Submit**, maka _workspace_ baru (webmap) akan muncul/masuk dalam list _workspace_. Tapi _by default_, _workspace_ ini (webmap) masih _disabled_ dan harus di-_enable_ dulu, serta seluruh _services_ nya (WMS, WFS, WMTS, dll.) diaktifkan. Untuk melaksanakannya, Anda harus mengedit _workspace_-nya. Klik pada _workspace_ yang akan diedit (_box_ merah pada gambar berikut):
+  
   ![GeoServer WMS/WFS](./img/geoserver-03-list-workspace.jpg)
+  
+  Pada bagian **Settings**, _checkbox_ berlabel **Enabled** di-_check_. Dan pada bagian **Services**, _check_ (yang berarti aktifkan _services_-nya) seluruh _checkboxes_ untuk **WMS**, **WMTS**, **WFS** dan **WCS**. _Scroll_ ke bawah hingga akhir halaman, dan klik _button_ **Save**.
   
   ![GeoServer WMS/WFS](./img/geoserver-04-edit-workspace.jpg)
   
+  Berikutnya, **hubungkan** _workspace_ yang telah kita buat tersebut (webmap) dengan **PostgreSQL/PostGIS**-nya. Klik menu **Stores**, dan setelah muncul tampilan **Stores**, (**2**) klik pada **Add new Store**.
+  
   ![GeoServer WMS/WFS](./img/geoserver-05-create-store.jpg)
+  
+  Pada tampilan **New data source**, klik pada **PostGIS - PostGIS Database**.
   
   ![GeoServer WMS/WFS](./img/geoserver-06-available-data-store.jpg)
   
+  Berikutnya akan muncul tampilan **New Vector Data Source**, seperti pada gambar berikut:
+  
   ![GeoServer WMS/WFS](./img/geoserver-07-postgis-connection.jpg)
+  
+  > Pada bagian **Basic Store Info**, pilih _workspace_ yang akan dihubungkan dengan _database_ melalui pilihan _drop-down_ yang tersedia. Pada contoh ini kita pilih **webmap**. Kemudian untuk **Data Source Name** (DSN), kita beri nama saja dengan nama _database_-nya, yaitu **webmap_db**. FYI, tuliskan nama DSN **tanpa spasi**. Untuk **Description**, isikan dengan deskripsi DSN-nya. Di sini boleh ada spasi, tapi ya jangan panjang-panjang. Akhirnya, pastikan _checkbox_ **Enabled**-nya di-_check_.
+  
+  > Pada bagian **Connection Parameters**, isi **host**: **localhost** (ingat, GeoServer dan PostgreSQL/PostGIS ada dalam _host_ yang sama. Jadi aksesnya tetap ke _localhost_), **port**: **5432**, **database**: **webmap_db**, **user**: **pgdbuser**, **password**: password Anda, dan _checkbox_ **Expose primary keys**-nya di-_check_.
+  
+  Berikutnya, _scroll_ ke bawah, dan klik **Save**, maka berikutnya yang muncul adalah tampilan New Layer. Klik **Publish**, seperti pada gambar:
   
   ![GeoServer WMS/WFS](./img/geoserver-08-new-layer.jpg)
   
+  Proses selanjutnya adalah **Edit Layer**. Fokus ke _tab_ **Data**. Untuk _section_ **Basic Resource Info**, biarkan apa-adanya saja. **Name** dan **Title**: **ne_10m_admin_0_countries**. Pastikan _checkboxes_ **Enabled** dan **Advertised** dalam keadaan di-_check_.
+  
   ![GeoServer WMS/WFS](./img/geoserver-09-data.jpg)
+  
+  Kemudian pada bagian **Coordinate Reference Systems**, pada _drop-down_ pilihan **SRS handling**, pilih **Keep native**. Ini berarti antara **Native SRS** dan **Declared SRS**-nya sama, yaitu **EPSG 4326**.
   
   ![GeoServer WMS/WFS](./img/geoserver-10-srs-handling.jpg)
   
+  Di bawah bagian **Coordinate Reference Systems**, berikutnya adalah **Bounding Boxes**. Klik pada **Compute from data** untuk mendapatkan **Native Bounding Box**-nya, dan diikuti klik pada **Compute from native bounds** untuk mendapatkan **Lat/Lon Bounding Box**-nya (lihat _box_ merah pada gambar di bawah ini),
+  
   ![GeoServer WMS/WFS](./img/geoserver-11-bbox.jpg)
+  
+  sehingga seluruh _field_ **Min X**, **Min Y**, **Max X** dan **Max Y** baik untuk **Native Bounding Box** dan **Lat/Lon Bounding Box** terisi semua.
   
   ![GeoServer WMS/WFS](./img/geoserver-12-computed-bbox.jpg)
   
+  Beralih ke _tab_ **Publishing**, _checkbox_ **Queryable** di-_check_. Untuk pilihan **Opaque** nantinya bisa Anda pilih jika diperlukan.
+  
   ![GeoServer WMS/WFS](./img/geoserver-13-publishing.jpg)
+  
+  Terakhir, scroll ke bawah, dan klik Save.
   
   ![GeoServer WMS/WFS](./img/geoserver-14-save.jpg)
   
+  Tampilan berikutnya yang bakal muncul adalah **Layers**, dimana WMS _layer_ yang sudah di-_create_ tadi sudah muncul dalam daftar _layer_ yang aktif (lihat _box_ merah).
+  
   ![GeoServer WMS/WFS](./img/geoserver-15-layers.jpg)
+  
+  Untuk melihat/_preview_ _layer_-nya, masuk ke menu **Layer Preview** pada bagian/kelompok menu **Data**. Daftar _layer_ yang bisa di-_preview_ akan muncul, dan pada _layer_ yang akan kita _preview_ (**_ne_10m_admin_0_countries_**), klik pada _link_ **Openlayers** (lihat _box_ merah pada gambar berikut).
   
   ![GeoServer WMS/WFS](./img/geoserver-16-openlayers.jpg)
   
+  > _By default_, GeoServer menggunakan library [**OpenLayers**](https://openlayers.org) pada _preview webmap_-nya.
+  
+  _Preview_ dari WMS/WFS _layer_ Anda akan tampil di _tab_ baru browser, dan jika kita meng-klik pada salah-satu _polygon_, maka pada bagian bawah tampilan petanya akan muncul seluruh _attributes_ yang persis-sama dengan _fields_ di _table_ PostgreSQL, seperti pada gambar berikut:
+  
   ![GeoServer WMS/WFS](./img/geoserver-17-preview.jpg)
   
+  Hingga tahap ini, **WMS/WFS _services_** pada **GeoServer** Anda yang terhubung dengan **PostgreSQL/PostGIS** sudah siap diakses dengan menggunakan aplikasi lain, seperti **Quantum GIS** atau langsung ditampilkan dalam sebuah _webmap_ dengan menggunakan JavaScript _library_ seperti [**OpenLayers**](https://openlayers.org) atau [**Leaflet.JS**](https://leafletjs.com/).
+  
+##### 10. WMS/WFS Layer di Quantum GIS.
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
