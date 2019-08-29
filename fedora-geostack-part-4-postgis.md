@@ -2,7 +2,7 @@
 
 Berikut ini adalah langkah-langkah konfigurasi PostgreSQL/PostGIS setelah prosedur instalasinya selesai dilaksanakan pada [Part 1](./README.md).
 
-##### 1. Inisiasi _built-in database_ PostgreSQL:
+#### 1. Inisiasi _built-in database_ PostgreSQL:
 
 Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilaksanakan, hal pertama yang paling mendasar untuk dilakukan adalah menginisiasi _built-in database_-nya. _Command_-nya adalah sebagai berikut:
 
@@ -16,7 +16,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   PostgreSQL sudah aktif dan siap diakses.
   
-##### 2. _Create_ users (superuser dan regular user):
+#### 2. _Create_ users (superuser dan regular user):
 
   Pada praktiknya, Anda akan membutuhkan 2 (dua) jenis user, yaitu **_superuser_** dan **_regular user_**. User dengan akses level _superuser_ dimanfaatkan untuk _create_, _modify_ dan _drop_ database maupun users, serta mengatur _grant access_ untuk _regular users_. Sedangkan _regular users_ digunakan untuk mengakses database dari aplikasi.
 
@@ -46,7 +46,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   > Untuk mengakses sebuah _database_, _regular users_ butuh _grant access_ yang dijalankan oleh _superuser_.
   
-##### 3. _Create_ database _template_ (untuk PostGIS dan PgRouting):
+#### 3. _Create_ database _template_ (untuk PostGIS dan PgRouting):
 
   Masih di _shell_ yang sama, langkah berikutnya adalah membuat _template_ database yang nantinya akan digunakan sebagai _template_ database aplikasi.
   
@@ -66,7 +66,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   postgis_template-#
   ```
   
-##### 4. _Create extensions_ pada _template database_:
+#### 4. _Create extensions_ pada _template database_:
 
   ```
   postgis_template-# CREATE EXTENSION postgis;
@@ -102,7 +102,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   postgis_template-# \q
   ```
   
-##### 5. Mengganti postgres/root _password_:
+#### 5. Mengganti postgres/root _password_:
 
   _By default_, _password_ untuk _built-in superuser_ PostgreSQL (postgres) adalah **KOSONG** atau tidak ber-_password_. Hal ini tentu saja berbahaya bagi sistem dari segi keamanan. Oleh sebab itu, langkah-langkahnya adalah sebagai berikut:
   
@@ -150,7 +150,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   [rinjani@nusantara ~]$ 
   ```
   
-##### 6. Meng-edit file konfigurasi PostgreSQL
+#### 6. Meng-edit file konfigurasi PostgreSQL
 
   Ada 2 (dua) file konfigurasi utama di PostgreSQL, yaitu **_postgresql.conf_** dan **_pg_hba.conf_**. Untuk meng-edit-nya, jalankan _command_:
   
@@ -210,7 +210,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   [rinjani@nusantara ~]$ sudo systemctl start postgresql.service
   ```
 
-##### 7. _Create database_ dan pengaturan akses untuk _user(s)_:
+#### 7. _Create database_ dan pengaturan akses untuk _user(s)_:
 
   Pada dasarnya, _creating database_ adalah _create database_ berdasar _template_ yang sudah _spatially-enabled_ (yaitu **postgis_template**), dan mengatur akses untuk _user(s)_-nya . Langkah-langkahnya:
   
@@ -246,7 +246,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   [rinjani@nusantara ~]$ 
   ```
 
-##### 8. PostGIS Shapefile and DBF Loader/Exporter dan PgAdmin 4
+#### 8. PostGIS Shapefile and DBF Loader/Exporter dan PgAdmin 4
 
   Lakukan langkah-langkah ini di workstation Anda.
   
@@ -400,7 +400,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   Sebagai catatan, _basemap_ dari [**OpenStreetMap**]() hanya akan muncul apabila SRID-nya **EPSG 4326**. Saya belum mencoba untuk **EPSG 3857** atau lainnya. Untuk lebih jelasnya mengenai perbedaan antara **EPSG 4326** dan **EPSG 3857**, dapat Anda baca di artikel bertajuk [EPSG 4326 vs EPSG 3857](https://lyzidiamond.com/posts/4326-vs-3857) ini.
   
-##### 9. GeoServer WMS/WFS Services
+#### 9. GeoServer WMS/WFS Services
 
   _Test_ kemampuan **Webmap Development Server** selanjutnya adalah **WMS/WFS services**. Untuk melakukan _test_ ini, Anda bisa memulainya dengan membuat **WMS/WFS services** melalui **GeoServer** yang sudah aktif di **Webmap Development Server** Anda. Langkah-langkahnya adalah sebagai berikut:
   
@@ -440,7 +440,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   > Pada bagian **Connection Parameters**, isi **host**: **localhost** (ingat, GeoServer dan PostgreSQL/PostGIS ada dalam _host_ yang sama. Jadi aksesnya tetap ke _localhost_), **port**: **5432**, **database**: **webmap_db**, **user**: **pgdbuser**, **password**: password Anda, dan _checkbox_ **Expose primary keys**-nya di-_check_.
   
-  Berikutnya, _scroll_ ke bawah, dan klik **Save**, maka berikutnya yang muncul adalah tampilan New Layer. Klik **Publish**, seperti pada gambar:
+  Berikutnya, _scroll_ ke bawah, dan klik **Save**, maka berikutnya yang muncul adalah tampilan **New Layer**. Klik **Publish**, seperti pada gambar:
   
   ![GeoServer WMS/WFS](./img/geoserver-08-new-layer.jpg)
   
@@ -460,31 +460,31 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![GeoServer WMS/WFS](./img/geoserver-12-computed-bbox.jpg)
   
-  Beralih ke _tab_ **Publishing**, _checkbox_ **Queryable** di-_check_. Untuk pilihan **Opaque** nantinya bisa Anda pilih jika diperlukan.
+  Beralih ke _tab_ **Publishing**, pastikan _checkbox_ **Queryable** di-_check_. Untuk pilihan **Opaque** nantinya bisa Anda pilih jika diperlukan.
   
   ![GeoServer WMS/WFS](./img/geoserver-13-publishing.jpg)
   
-  Terakhir, scroll ke bawah, dan klik Save.
+  Terakhir, _scroll_ ke bawah, dan klik **Save**.
   
   ![GeoServer WMS/WFS](./img/geoserver-14-save.jpg)
   
-  Tampilan berikutnya yang bakal muncul adalah **Layers**, dimana WMS _layer_ yang sudah di-_create_ tadi sudah muncul dalam daftar _layer_ yang aktif (lihat _box_ merah).
+  Tampilan berikutnya yang bakal muncul adalah **Layers**, dimana WMS _layer_ yang sudah di-_create_ tadi sudah muncul dalam daftar seluruh _layers_ yang aktif (lihat _box_ merah).
   
   ![GeoServer WMS/WFS](./img/geoserver-15-layers.jpg)
   
-  Untuk melihat/_preview_ _layer_-nya, masuk ke menu **Layer Preview** pada bagian/kelompok menu **Data**. Daftar _layer_ yang bisa di-_preview_ akan muncul, dan pada _layer_ yang akan kita _preview_ (**_ne_10m_admin_0_countries_**), klik pada _link_ **Openlayers** (lihat _box_ merah pada gambar berikut).
+  Untuk melihat/_preview_ _layer_-nya, masuk ke menu **Layer Preview** pada bagian/kelompok menu **Data**. Daftar seluruh _layers_ yang bisa di-_preview_ akan muncul, dan pada _layer_ yang akan kita _preview_ (**_ne_10m_admin_0_countries_**), klik pada _link_ **Openlayers** (lihat _box_ merah pada gambar berikut).
   
   ![GeoServer WMS/WFS](./img/geoserver-16-openlayers.jpg)
   
   > _By default_, GeoServer menggunakan library [**OpenLayers**](https://openlayers.org) pada _preview webmap_-nya.
   
-  _Preview_ dari WMS/WFS _layer_ Anda akan tampil di _tab_ baru browser, dan jika kita meng-klik pada salah-satu _polygon_, maka pada bagian bawah tampilan petanya akan muncul seluruh _attributes_ yang persis-sama dengan _fields_ di _table_ PostgreSQL, seperti pada gambar berikut:
+  _Preview_ dari WMS/WFS _layer_ Anda akan tampil di _tab_ baru _browser_, dan jika kita meng-klik pada salah-satu _polygon_, maka pada bagian bawah tampilan petanya akan muncul seluruh _attributes_ yang persis-sama dengan _fields_ di _table_ PostgreSQL, seperti pada gambar berikut:
   
   ![GeoServer WMS/WFS](./img/geoserver-17-preview.jpg)
   
   Hingga tahap ini, **WMS/WFS _services_** pada **GeoServer** Anda yang terhubung dengan **PostgreSQL/PostGIS** sudah siap diakses dengan menggunakan aplikasi lain, seperti **Quantum GIS** atau langsung ditampilkan dalam sebuah _webmap_ dengan menggunakan JavaScript _library_ seperti [**OpenLayers**](https://openlayers.org) atau [**Leaflet.JS**](https://leafletjs.com/).
   
-##### 10. WMS/WFS Layer di Quantum GIS.
+#### 10. WMS/WFS Layer di Quantum GIS.
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
