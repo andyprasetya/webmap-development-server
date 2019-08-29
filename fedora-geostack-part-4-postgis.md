@@ -350,11 +350,11 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   8.7. PgAdmin 4
   
-  Instalasi PgAdmin 4 sangat mudah. Anda tinggal men-download-nya dari download page di situsnya, dan laksanakan proses instalasi di workstation hingga selesai. Sebagai catatan, Anda akan diminta untuk membuat master password, yaitu password yang digunakan saat pertama kali mengakses PgAdmin 4 di workstation Anda.
+  Instalasi **PgAdmin 4** sangat mudah. Anda tinggal men-_download_-nya dari [download page](https://www.pgadmin.org/download/) di situsnya, dan laksanakan proses instalasi di **workstation** hingga selesai. Sebagai catatan, Anda akan diminta untuk membuat **master password**, yaitu _password_ yang digunakan saat pertama kali mengakses **PgAdmin 4** di _workstation_ Anda.
   
   ![PgAdmin 4](./img/pgadmin4-master-password.jpg)
   
-  Setelah Anda berhasil masuk ke PgAdmin 4, maka yang pertama kali harus dilakukan adalah _create connection_ ke server PostgreSQL yang akan Anda akses.
+  Setelah Anda berhasil masuk ke **PgAdmin 4**, maka yang pertama kali harus dilakukan adalah _create connection_ ke server PostgreSQL yang akan Anda akses.
   
   ![PgAdmin 4](./img/pgadmin4-create.jpg)
   
@@ -366,7 +366,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![PgAdmin 4](./img/pgadmin4-create-connection.jpg)
   
-  Kalau seluruh isian kita sudah benar, maka begitu kita klik Save, maka entry Webmap Development Server akan muncul di pilihan server pada PgAdmin 4:
+  Kalau seluruh isian kita sudah benar, maka begitu kita klik **Save**, maka entry **Webmap Development Server** akan muncul di pilihan server pada **PgAdmin 4**:
   
   ![PgAdmin 4](./img/pgadmin4-connection-created.jpg)
   
@@ -390,7 +390,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![PgAdmin 4](./img/pgadmin4-show-all-entries.jpg)
   
-  Menariknya pada PgAdmin 4 ini, jika Anda _scroll_ ke kanan terus hingga akhir _table_, akan ada sebuah _button_ yang berfungsi untuk menampilkan/visualisasi data _geometry_-nya.
+  Menariknya pada **PgAdmin 4** ini, jika Anda _scroll_ ke kanan terus hingga akhir _table_, akan ada sebuah _button_ yang berfungsi untuk menampilkan/visualisasi data _geometry_-nya.
   
   ![PgAdmin 4](./img/pgadmin4-geometry-viewer-button.jpg)
   
@@ -398,7 +398,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![PgAdmin 4](./img/pgadmin4-geometry-viewer-map.jpg)
   
-  > Sebagai catatan, _basemap_ dari [**OpenStreetMap**]() hanya akan muncul apabila SRID-nya **EPSG 4326**. Saya belum mencoba untuk **EPSG 3857** atau lainnya. Untuk lebih jelasnya mengenai perbedaan antara **EPSG 4326** dan **EPSG 3857**, dapat Anda baca di artikel bertajuk [EPSG 4326 vs EPSG 3857](https://lyzidiamond.com/posts/4326-vs-3857).
+  > Sebagai catatan, _basemap_ dari [**OpenStreetMap**]() hanya akan muncul apabila SRID-nya **EPSG 4326**. Saya belum mencoba untuk **EPSG 3857** atau lainnya. Untuk lebih jelasnya mengenai perbedaan antara **EPSG 4326** dan **EPSG 3857**, dapat Anda baca di artikel bertajuk [EPSG 4326 vs EPSG 3857](https://lyzidiamond.com/posts/4326-vs-3857) ini.
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
