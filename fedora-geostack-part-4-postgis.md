@@ -412,7 +412,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![GeoServer WMS/WFS](./img/geoserver-01-create-workspace.jpg)
   
-  Pada tampilan **New Workspace**, isi **Name**: **webmap**, dan **Namespace URI**: **http://webmap.mysite.com/webmap**. Sebagai catatan, nama _workspace_ hanya dibatasi hingga **10 karakter** saja oleh GeoServer-nya.
+  Pada tampilan **New Workspace**, isi **Name**: **webmap**, dan **Namespace URI**: **```http://webmap.mysite.com/webmap```**. Sebagai catatan, nama _workspace_ hanya dibatasi hingga **10 karakter** saja oleh GeoServer-nya.
   
   ![GeoServer WMS/WFS](./img/geoserver-02-new-workspace.jpg)
   
