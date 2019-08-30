@@ -484,33 +484,35 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   Hingga tahap ini, **WMS/WFS _services_** pada **GeoServer** Anda yang terhubung dengan **PostgreSQL/PostGIS** sudah siap diakses dengan menggunakan aplikasi lain, seperti **Quantum GIS** atau langsung ditampilkan dalam sebuah _webmap_ dengan menggunakan JavaScript _library_ seperti [**OpenLayers**](https://openlayers.org) atau [**Leaflet.JS**](https://leafletjs.com/).
   
-#### 10. WMS/WFS Layer di Quantum GIS.
+#### 10. WMS/WMTS/WFS Layer di Quantum GIS.
   
-  --
+  Hampir sama dengan menambahkan _layer_ PostgreSQL/PostGIS, pada **Quantum GIS** kita dapat langsung menambahkan **WMS/WMTS/WFS _layer_** melalui menu **Layer** -\> **Data Source Manager**. Pada _dialog_ ini Anda dapat langsung menambahkan koneksi untuk **WMS/WMTS** dan **WFS** sekaligus, karena pengaturan akses untuk seluruh layanan data ini relatif sama perlakuannya. Pada contoh berikut ini kita akan memilih **WMS/WMTS**:
   
   ![Quantum GIS WMS Layer](./img/qgis-wms-01-add-layer.jpg)
   
-  --
+  Setelah muncul _dialog_ **Data Source Manager**, pilih **WMS/WMTS** pada menu di bagian kiri, dan pada bagian kanan, di _tab_ **Layers**, klik **New**.
   
   ![Quantum GIS WMS Layer](./img/qgis-wms-02-create-connection.jpg)
   
-  --
+  Jika _dialog_ **Create a New WMS/WMTS Connection** muncul, isi **Name**: **WMS @Webmap Development Server**, dan **URL**: **http://192.168.1.23:8080/geoserver/webmap/wms**, dan klik **OK**.
   
   ![Quantum GIS WMS Layer](./img/qgis-wms-03-create-wms.jpg)
   
-  --
+  Setelah koneksi selesai dibuat, klik **Connect**.
   
   ![Quantum GIS WMS Layer](./img/qgis-wms-04-connect.jpg)
   
-  --
+  **Data Source Manager** akan menampilkan **WMS/WMTS _layers_** pada _list_-nya, dan pilih _layer_ **ne_10m_admin_0_countries**. Kemudian klik **Add**, tunggu beberapa saat hingga polygon-nya muncul di _background_, dan klik **Close**.
   
   ![Quantum GIS WMS Layer](./img/qgis-wms-05-add-close.jpg)
   
-  --
+  Dan akhirnya WMS/WMTS _layer_ **ne_10m_admin_0_countries** akan muncul seperti dalam gambar berikut:
   
   ![Quantum GIS WMS Layer](./img/qgis-wms-06-map-loaded.jpg)
   
-  --
+  > Lakukan hal yang sama untuk memunculkan **WFS** _layer_.
+  
+_Exhausting?_ _Tedious?_ _Or so overwhelming?_ Semua! Saya sendiri merasa bahwa sebanyak-banyak dan sedetail-detailnya saya menulis **Part 4** ini, tentu saja masih belum bisa meng-_cover_ seluruh _use case_ PostgreSQL/PostGIS dalam praktiknya di dunia nyata. Ini masih di kulit-luarnya saja, dan itu-pun masih se-titik. So, tolong beri saya masukan! _PRs are welcome_.
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
