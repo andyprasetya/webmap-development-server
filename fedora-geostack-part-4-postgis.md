@@ -494,7 +494,7 @@ Setelah proses instalasi PostgreSQL (dan PostGIS, PgRouting, dll.) selesai dilak
   
   ![Quantum GIS WMS Layer](./img/qgis-wms-02-create-connection.jpg)
   
-  Jika _dialog_ **Create a New WMS/WMTS Connection** muncul, isi **Name**: **WMS @ Webmap Development Server**, dan **URL**: **http:\/\/192.168.1.23\:8080\/geoserver\/webmap\/wms**, dan klik **OK**.
+  Jika _dialog_ **Create a New WMS/WMTS Connection** muncul, isi **Name**: **WMS @ Webmap Development Server**, dan **URL**: **```http://192.168.1.23:8080/geoserver/webmap/wms```**, dan klik **OK**.
   
   ![Quantum GIS WMS Layer](./img/qgis-wms-03-create-wms.jpg)
   
