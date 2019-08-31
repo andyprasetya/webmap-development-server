@@ -10,7 +10,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
 
 #### 1. _Editing_ php.ini file
 
-  Langkah pertama adalah membuat direktori untuk penampungan PHP_SESSION files, dan diikuti dengan mengedit file php.ini yang by default berada di direktori ```/etc```. Commands-nya:
+  Langkah pertama adalah membuat direktori untuk penampungan **PHP_SESSION** _files_, dan diikuti dengan mengedit file ```php.ini``` yang _by default_ berada di direktori ```/etc```. _Commands_-nya:
   
   ```
   [rinjani@nusantara ~]$ sudo mkdir /tmp/phpsessions
@@ -20,9 +20,9 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   [rinjani@nusantara ~]$ sudo nano /etc/php.ini
   ```
   
-  > Sebagai catatan, pada file php.ini, comments selalu diawali dengan karakter **;** (titik-koma / _semicolon_).
+  > Sebagai catatan, pada file ```php.ini```, comments selalu diawali dengan karakter **;** (titik-koma / _semicolon_).
   
-  Tambahkan, atau ganti values pada entries berikut ini, yang akan ditampilkan dalam sebuah table:
+  Tambahkan, atau ganti _values_ pada _entries_ berikut ini, yang akan ditampilkan dalam sebuah _table_:
   
   Entry/Setting | Default/Old Value | New Value | Comments
   ------------- | ----------------- | --------- | --------
@@ -30,20 +30,54 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   **error_reporting** | ```E_ALL & ~E_DEPRECATED & ~E_STRICT``` | ```E_ALL``` | -
   **post_max_size** | ```2M``` | ```200M``` | -
   **upload_max_filesize** | ```2M``` | ```200M``` | -
-  **date.timezone** | ```disabled, empty``` | ```"Asia/Jakarta"``` | ```uncomment first```
+  **date.timezone** | ```disabled, empty``` | ```"Asia/Jakarta"``` | ```uncomment```
   **pdo_mysql.default_socket** | ```empty``` | ```/var/lib/mysql/mysql.sock``` | -
   **mysql.default_port** | ```empty``` | ```3306``` | -
   **mysql.default_socket** | ```empty``` | ```/var/lib/mysql/mysql.sock``` | -
   **mysql.default_host** | ```empty``` | ```localhost``` | -
   **mysqli.default_socket** | ```empty``` | ```/var/lib/mysql/mysql.sock``` | -
   **mysqli.default_host** | ```empty``` | ```localhost``` | -
-  **session.save_path** | ```disabled, empty``` | ```"/tmp/phpsessions"``` | ```uncomment first```
+  **session.save_path** | ```disabled, empty``` | ```"/tmp/phpsessions"``` | ```uncomment```
   
-  Save dengan menekan Ctrl+O lalu \<Enter\> untuk mengkonfirmasi Yes, dan exit dengan menekan Ctrl-X.
+  Misal:
+  
+  ```
+  ...
+  ;date.timezone = 
+  ...
+  ```
+  
+  menjadi:
+  
+  ```
+  ...
+  date.timezone = "Asia/Jakarta"
+  ...
+  ```
+  
+  Dan misal:
+  
+  ```
+  ...
+  mysql.default_socket = 
+  ...
+  ```
+  
+  menjadi:
+  
+  ```
+  ...
+  mysql.default_socket = /var/lib/mysql/mysql.sock
+  ...
+  ```
+  
+  > Jadi, ada values yang pakai **"..."** (petik-ganda / _double-quotes_), dan ada yang tidak. Cermati format _values_-nya.
+  
+  _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**.
   
 #### 2. PHP-FPM (PHP FastCGI Process Manager)
 
-  --
+  Setelah file ```php.ini``` diedit, maka **PHP-FPM**-nya 
   
 #### 3. _Editing_ nginx.conf file
 
