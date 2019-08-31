@@ -153,7 +153,7 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   mysql> QUIT;
   ```
   
-  Sehingga shell-nya kembali menjadi:
+  Sehingga _shell_-nya kembali menjadi:
   
   ```
   [rinjani@nusantara ~]$ 
@@ -161,11 +161,15 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   
   ##### 1.6. Membuka port di firewalld
   
+  Jika Anda menghendaki MySQL-nya bisa diakses dari mesin lain (asumsi: tanpa menggunakan koneksi _via_ **SSH**), port **3306**-nya (port _default_-nya MySQL) dibuka dengan _commands_:
+  
   ```
   [rinjani@nusantara ~]$ sudo firewall-cmd --permanent --zone=FedoraServer --add-port=3306/tcp
   
   [rinjani@nusantara ~]$ sudo firewall-cmd --reload
   ```
+  
+  Tapi membuka port 3306 di firewalld ini **tidak disarankan**, lebih baik diakses via SSH saja.
   
 #### 2. MySQL Workbench
 
