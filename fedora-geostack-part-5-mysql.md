@@ -179,29 +179,37 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   
   ![MySQL Workbench](./img/mysqlwb-01-start.jpg)
   
-  
+  Dialog **Setup New Connection** muncul, isi **Connection Name**: **webmap_db @ Webmap Development Server**, dan pada _drop-down_ **Connection Method** pilih **Standard TCP/IP over SSH**:
   
   ![MySQL Workbench](./img/mysqlwb-02-cc-method.jpg)
   
+  Kemudian lanjutkan dalam _tab_ **Parameters**, isikan **SSH Hostname**: **192.168.1.23:22** (port **22** adalah _default port_ untuk SSH), dan **SSH Username**: **rinjani**.
   
+  Untuk koneksi ke MySQL-nya, ubah entry **127.0.0.1** menjadi **localhost** pada **MySQL Hostname**, **MySQL Server Port**-nya tetap di **3306**, **Username**: **webmap**, dan **Default Schema** diisi dengan nama _database_ yang akan kita akses, yaitu **webmap_db**.
   
   ![MySQL Workbench](./img/mysqlwb-03-cc-completed.jpg)
   
+  Pastikan isian Anda sudah sesuai dengan environment yang Anda miliki, dan akhirnya klik OK.
   
+  Untuk memulai koneksi, double-click pintasan yang ada, seperti pada gambar berikut:
   
   ![MySQL Workbench](./img/mysqlwb-04-to-connect.jpg)
   
-  
+  Pertama kali yang muncul adalah Anda akan diminta untuk mengisi _password user_ OS-nya (Fedora Server), yang dalam contoh ini adalah _password_-nya **rinjani**.
   
   ![MySQL Workbench](./img/mysqlwb-05-ssh.jpg)
   
-  
+  Setelah sukses login _via_ SSH, baru Anda diminta untuk mengisi _password user_ **webmap** untuk masuk ke MySQL-nya.
   
   ![MySQL Workbench](./img/mysqlwb-06-mysql.jpg)
   
-  
+  Akhirnya, **MySQL Workbench** Anda sudah terhubung ke _database_ **webmap_db**, dan Anda dapat melakukan operasi-operasi _database_ sesuai kebutuhan Anda.
   
   ![MySQL Workbench](./img/mysqlwb-07-data.jpg)
+  
+Sampai tahap ini, Anda berarti sudah memiliki 2 database server yang berjalan, yaitu PostgreSQL/PostGIS dan MySQL Community Server.
+
+> Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
 ### Related parts:
   * [Part 1](./README.md): Post-Installation / OS Configuration
