@@ -77,11 +77,75 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
 #### 2. PHP-FPM (PHP FastCGI Process Manager)
 
-  Setelah file ```php.ini``` diedit, maka **PHP-FPM**-nya 
+  Setelah file ```php.ini``` diedit, maka **PHP-FPM**-nya harus diaktifkan lewat **systemd**:
+  
+  ```
+  [rinjani@nusantara ~]$ sudo systemctl enable php-fpm.service
+  
+  [rinjani@nusantara ~]$ sudo systemctl start php-fpm.service
+  ```
+  
+  _Test_ PHP-nya dengan _commands_ berikut ini:
+  
+  ```
+  [rinjani@nusantara ~]$ php --ri pgsql
+  
+  [rinjani@nusantara ~]$ php --ri mysqli
+  
+  [rinjani@nusantara ~]$ php --ri gd
+  
+  [rinjani@nusantara ~]$ php --ri gmp
+  
+  [rinjani@nusantara ~]$ php --ri json
+  
+  [rinjani@nusantara ~]$ php --ri session
+  
+  [rinjani@nusantara ~]$ php --ri sqlite3
+  
+  [rinjani@nusantara ~]$ php --ri exif
+  ```
+  
+  Kalau _tests_ di atas sudah menampilkan informasi bahwa modul-modul tersebut _support_-nya _enabled_, maka PHP Anda sudah siap.
   
 #### 3. _Editing_ nginx.conf file
 
-  --
+  Setting ```php.ini``` memang _njlimet_ (rumit). Yang berikut ini bakalan lebih _njlimet_ lagi, yaitu setting Nginx pada file ```nginx.conf```:
+  
+  ```
+  [rinjani@nusantara ~]$ sudo nano /etc/nginx/nginx.conf
+  ```
+  
+  Yang diedit/ditambah adalah:
+  
+  3.1. types_hash_max_size
+  
+  Yang tadinya:
+  
+  ```
+  ...
+  types_hash_max_size 2048;
+  ...
+  ```
+  
+  menjadi:
+  
+  ```
+  ...
+  types_hash_max_size 4096;
+  ...
+  ```
+  
+  3.2. client_max_body_size
+  
+  Tambahkan _entry_ ```client_max_body_size``` di bawah ```types_hash_max_size``` supaya _user_ bisa meng-_upload file_ hingga **200 MB**:
+  
+  ```
+  ...
+  types_hash_max_size 4096;
+  client_max_body_size 200m;
+  ...
+  ```
+  
   
 #### 4. phpinfo()
 
