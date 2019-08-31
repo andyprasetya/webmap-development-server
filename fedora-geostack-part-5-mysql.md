@@ -17,7 +17,7 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
 
   ##### 1.1. _Enable_ dan _start_ MySQL sebagai _daemon_ (systemd)
   
-  Langkah awal yang harus kita lakukan adalah enable service-nya, dan langsung di-start:
+  Langkah awal yang harus kita lakukan adalah _enable service_-nya, dan langsung di-_start_:
   
   ```
   [rinjani@nusantara ~]$ sudo systemctl enable mysqld.service
@@ -33,7 +33,11 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   [rinjani@nusantara ~]$ sudo grep 'A temporary password is generated for root@localhost' /var/log/mysqld.log | tail -1
   ```
   
-  _Temporary password_-nya akan terlihat, dan selanjutnya _login_ sebagai **root**:
+  _Temporary password_-nya akan terlihat seperti pada gambar berikut:
+  
+  ![MySQL Temporary Password](./img/mysql-00-temporary-password.jpg)
+  
+  Selanjutnya _login_ sebagai **root**:
   
   ```
   [rinjani@nusantara ~]$ mysql -u root -p
