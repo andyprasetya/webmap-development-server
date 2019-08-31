@@ -169,13 +169,13 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   [rinjani@nusantara ~]$ sudo firewall-cmd --reload
   ```
   
-  Tapi membuka port 3306 di firewalld ini **tidak disarankan**, lebih baik diakses via SSH saja.
+  Tapi membuka port 3306 di firewalld ini **tidak disarankan**, lebih baik diakses via SSH saja. Ini yang pada bagian berikutnya akan kita bahas.
   
 #### 2. MySQL Workbench
 
   Sedikit mengulas _DB manager_ untuk MySQL yang _support_ koneksi _via_ **SSH**, kita bisa menggunakan **MySQL Workbench**, yang bisa di-_download_ di [**_download page_**]()-nya ini.
   
-  Setelah instalasinya selesai, _create connection_ ke server dengan meng-klik button **[+]**, seperti pada berikut:
+  Setelah instalasinya selesai, _create connection_ ke server dengan meng-klik _button_ **[+]**, seperti pada berikut:
   
   ![MySQL Workbench](./img/mysqlwb-01-start.jpg)
   
@@ -185,17 +185,17 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   
   Kemudian lanjutkan dalam _tab_ **Parameters**, isikan **SSH Hostname**: **192.168.1.23:22** (port **22** adalah _default port_ untuk SSH), dan **SSH Username**: **rinjani**.
   
-  Untuk koneksi ke MySQL-nya, ubah entry **127.0.0.1** menjadi **localhost** pada **MySQL Hostname**, **MySQL Server Port**-nya tetap di **3306**, **Username**: **webmap**, dan **Default Schema** diisi dengan nama _database_ yang akan kita akses, yaitu **webmap_db**.
+  Untuk koneksi ke MySQL-nya, ubah _entry_ **127.0.0.1** menjadi **localhost** pada **MySQL Hostname**, **MySQL Server Port**-nya tetap di **3306**, **Username**: **webmap**, dan **Default Schema** diisi dengan nama _database_ yang akan kita akses, yaitu **webmap_db**.
   
   ![MySQL Workbench](./img/mysqlwb-03-cc-completed.jpg)
   
-  Pastikan isian Anda sudah sesuai dengan environment yang Anda miliki, dan akhirnya klik OK.
+  Pastikan isian Anda sudah sesuai dengan _environment_ yang Anda miliki, dan akhirnya klik **OK**.
   
-  Untuk memulai koneksi, double-click pintasan yang ada, seperti pada gambar berikut:
+  Untuk memulai koneksi, _double-click_ pintasan yang ada, seperti pada gambar berikut (_box_ merah):
   
   ![MySQL Workbench](./img/mysqlwb-04-to-connect.jpg)
   
-  Pertama kali yang muncul adalah Anda akan diminta untuk mengisi _password user_ OS-nya (Fedora Server), yang dalam contoh ini adalah _password_-nya **rinjani**.
+  Pertama kali yang muncul adalah Anda akan diminta untuk mengisi _password user_ SSH-nya, yang dalam contoh ini adalah _password_-nya **rinjani**.
   
   ![MySQL Workbench](./img/mysqlwb-05-ssh.jpg)
   
@@ -207,7 +207,7 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   
   ![MySQL Workbench](./img/mysqlwb-07-data.jpg)
   
-Sampai tahap ini, Anda berarti sudah memiliki 2 database server yang berjalan, yaitu PostgreSQL/PostGIS dan MySQL Community Server.
+Sampai tahap ini, Anda berarti sudah memiliki 2 database server yang berjalan, yaitu **PostgreSQL/PostGIS** dan **MySQL Community Server**. Selanjutnya, kita akan membahas komponen-komponen yang terkait-erat dengan webmap _frontend development_. Terima kasih sudah bersabar mengikuti tutorial ini!
 
 > Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
 
