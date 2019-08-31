@@ -94,7 +94,11 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   Alternatif:
   ```
   [root@nusantara rinjani]# wget https://raw.githubusercontent.com/andyprasetya/webmap-development-server/master/files/print-apps.zip
+  ```
   
+  dan langsung ekstrak file-nya:
+  
+  ```
   [root@nusantara rinjani]# unzip print-apps.zip
   ```
   
@@ -158,3 +162,4 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   * [Part 2](./fedora-geostack-part-2-apache-tomcat.md): Configuring Apache Tomcat for GeoServer
   * Part 3: GeoServer Installation / Configuration (this file)
   * [Part 4](./fedora-geostack-part-4-postgis.md): Configuring PostgreSQL and PostGIS
+  * [Part 5](./fedora-geostack-part-5-mysql.md): Configuring MySQL Database

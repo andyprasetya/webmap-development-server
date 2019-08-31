@@ -158,6 +158,7 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   ```
   
   ##### 3.9. Install MySQL Community:
+  
   > Sebaiknya, cek terlebih dahulu versi termutakhir di situsnya MySQL.
   
   ```
@@ -168,19 +169,27 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   [rinjani@nusantara ~]$ sudo dnf install mysql-community-server mysql-community-client mysql-community-common mysql-community-libs mysql-community-test mysql-community-devel
   ```
   
-  ##### 3.10. Install Apache Tomcat:
+  ##### 3.10. Install MongoDB 4 (Community Edition):
+  
+  Biar nggak jadi dinosaurus, _nge-hype_ sedikit pasang **NoSQL** juga: **MongoDB**.
+  
+  ```
+  [rinjani@nusantara ~]$ sudo dnf install mongodb mongodb-server mongo-tools
+  ```
+  
+  ##### 3.11. Install Apache Tomcat:
   
   ```
   [rinjani@nusantara ~]$ sudo dnf install tomcat tomcat-webapps tomcat-admin-webapps
   ```
   
-  ##### 3.11. Install PHP
+  ##### 3.12. Install PHP
   
   ```
   [rinjani@nusantara ~]$ sudo dnf install php php-fpm php-devel php-bcmath php-dba php-dbg php-exif php-gd php-gmp php-interbase php-mbstring php-pecl-mcrypt php-mysqlnd php-odbc php-opcache php-pdo php-pdo-dblib php-pear php-pecl-selinux php-pecl-redis php-pgsql php-process php-soap php-xml php-xmlrpc
   ```
   
-  ##### 3.12. Install other components/software:
+  ##### 3.13. Install other components/software:
   
   ```
   [rinjani@nusantara ~]$ sudo dnf install composer samba* nginx pure-ftpd nodejs golang
@@ -201,3 +210,4 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   * [Part 2](./fedora-geostack-part-2-apache-tomcat.md): Configuring Apache Tomcat for GeoServer
   * [Part 3](./fedora-geostack-part-3-geoserver.md): GeoServer Installation / Configuration
   * [Part 4](./fedora-geostack-part-4-postgis.md): Configuring PostgreSQL and PostGIS
+  * [Part 5](./fedora-geostack-part-5-mysql.md): Configuring MySQL Database

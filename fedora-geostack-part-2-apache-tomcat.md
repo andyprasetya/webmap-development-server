@@ -108,3 +108,4 @@ Hal ini dilakukan supaya seluruh fitur Apache Tomcat dapat diakses dari luar, se
   * Part 2: Configuring Apache Tomcat for GeoServer (this file)
   * [Part 3](./fedora-geostack-part-3-geoserver.md): GeoServer Installation / Configuration
   * [Part 4](./fedora-geostack-part-4-postgis.md): Configuring PostgreSQL and PostGIS
+  * [Part 5](./fedora-geostack-part-5-mysql.md): Configuring MySQL Database
