@@ -27,17 +27,17 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   Entry/Setting | Default/Old Value | New Value | Comments
   ------------- | ----------------- | --------- | --------
   expose_php | On | Off | -
-	error_reporting | E_ALL & ~E_DEPRECATED & ~E_STRICT | E_ALL | -
-	post_max_size | 2M | 200M | -
-	upload_max_filesize | 2M | 200M | -
-	date.timezone | disabled, empty | "Asia/Jakarta" | uncomment first
-	pdo_mysql.default_socket | empty | /var/lib/mysql/mysql.sock | -
-	mysql.default_port | empty | 3306 | -
-	mysql.default_socket | empty | /var/lib/mysql/mysql.sock | -
-	mysql.default_host | empty | localhost | -
-	mysqli.default_socket | empty | /var/lib/mysql/mysql.sock | -
-	mysqli.default_host | empty | localhost | -
-	session.save_path | disabled, empty | "/tmp/phpsessions" | uncomment first
+  error_reporting | E_ALL & ~E_DEPRECATED & ~E_STRICT | E_ALL | -
+  post_max_size | 2M | 200M | -
+  upload_max_filesize | 2M | 200M | -
+  date.timezone | disabled, empty | "Asia/Jakarta" | uncomment first
+  pdo_mysql.default_socket | empty | /var/lib/mysql/mysql.sock | -
+  mysql.default_port | empty | 3306 | -
+  mysql.default_socket | empty | /var/lib/mysql/mysql.sock | -
+  mysql.default_host | empty | localhost | -
+  mysqli.default_socket | empty | /var/lib/mysql/mysql.sock | -
+  mysqli.default_host | empty | localhost | -
+  session.save_path | disabled, empty | "/tmp/phpsessions" | uncomment first
   
   Save dengan menekan Ctrl+O lalu \<Enter\> untuk mengkonfirmasi Yes, dan exit dengan menekan Ctrl-X.
   
