@@ -1,14 +1,14 @@
 ### Part 5: Configuring MySQL Database
 
-Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosedur instalasinya selesai dilaksanakan pada [Part 1](./README.md). Tapi sebelumnya, ada baiknya juga Anda download dulu contoh datanya, dengan _command_:
+Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosedur instalasinya selesai dilaksanakan pada [Part 1](./README.md). Tapi sebelumnya, ada baiknya juga Anda _download_ dulu contoh datanya, dengan _command_:
 
   ```
-  [rinjani@nusantara ~]$ wget https://gitlab.com/andyprasetya/missing-files/raw/master/files/sampledata.sql
+  [rinjani@nusantara ~]$ wget https://raw.githubusercontent.com/andyprasetya/webmap-development-server/master/files/sampledata.sql
   ```
   
   Alternatif:
   ```
-  [rinjani@nusantara ~]$ wget https://raw.githubusercontent.com/andyprasetya/webmap-development-server/master/files/sampledata.sql
+  [rinjani@nusantara ~]$ wget https://gitlab.com/andyprasetya/missing-files/raw/master/files/sampledata.sql
   ```
   
   Pastikan file ini berada di direktori **```/home/rinjani```**, dan nanti akan kita gunakan untuk contoh data di **MySQL**.
@@ -63,7 +63,7 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   
   ##### 1.3. _Create user_
   
-  Melanjutkan penggantian password untuk root, langsung saja Anda create user untuk mengakses MySQL dengan query:
+  Melanjutkan penggantian _password_ untuk **root**, langsung saja Anda _create user_ untuk mengakses MySQL dengan _queries_:
   
   ```
   mysql> CREATE USER 'webmap'@'localhost' IDENTIFIED WITH mysql_native_password BY '__password__';
@@ -115,7 +115,7 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   
   > _Kenapa_ banyak **```FLUSH PRIVILEGES;```**-nya ya? Ya biar pasti saja hasilnya. Kadang MySQL _lemot_ dalam meng-_update user privileges_-nya. Hahahaha...
   
-  ##### 1.5. Importing contoh data ke database
+  ##### 1.6. Importing contoh data ke database
   
   Kalau di bagian awal tadi Anda telah melaksanakan _download_ contoh data untuk MySQL, maka berikut ini adalah langkah-langkah _importing_ datanya ke database **webmap_db**:
   
@@ -159,7 +159,7 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   [rinjani@nusantara ~]$ 
   ```
   
-  ##### 1.6. Membuka port di firewalld
+  ##### 1.7. Membuka port di firewalld
   
   Jika Anda menghendaki MySQL-nya bisa diakses dari mesin lain (asumsi: tanpa menggunakan koneksi _via_ **SSH**), port **3306**-nya (port _default_-nya MySQL) dibuka dengan _commands_:
   
@@ -172,6 +172,36 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   Tapi membuka port 3306 di firewalld ini **tidak disarankan**, lebih baik diakses via SSH saja.
   
 #### 2. MySQL Workbench
+
+  Sedikit mengulas _DB manager_ untuk MySQL yang _support_ koneksi _via_ **SSH**, kita bisa menggunakan **MySQL Workbench**, yang bisa di-_download_ di [**_download page_**]()-nya ini.
+  
+  Setelah instalasinya selesai, _create connection_ ke server dengan meng-klik button **[+]**, seperti pada berikut:
+  
+  ![MySQL Workbench](./img/mysqlwb-01-start.jpg)
+  
+  
+  
+  ![MySQL Workbench](./img/mysqlwb-02-cc-method.jpg)
+  
+  
+  
+  ![MySQL Workbench](./img/mysqlwb-03-cc-completed.jpg)
+  
+  
+  
+  ![MySQL Workbench](./img/mysqlwb-04-to-connect.jpg)
+  
+  
+  
+  ![MySQL Workbench](./img/mysqlwb-05-ssh.jpg)
+  
+  
+  
+  ![MySQL Workbench](./img/mysqlwb-06-mysql.jpg)
+  
+  
+  
+  ![MySQL Workbench](./img/mysqlwb-07-data.jpg)
 
 ### Related parts:
   * [Part 1](./README.md): Post-Installation / OS Configuration
