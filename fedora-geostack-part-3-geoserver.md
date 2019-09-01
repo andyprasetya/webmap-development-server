@@ -163,3 +163,6 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   * Part 3: GeoServer Installation / Configuration (this file)
   * [Part 4](./fedora-geostack-part-4-postgis.md): Configuring PostgreSQL and PostGIS
   * [Part 5](./fedora-geostack-part-5-mysql.md): Configuring MySQL Database
+  * [Part 6](./fedora-geostack-part-6-php-nginx.md): Configuring PHP, PHP-FPM and Nginx
+  * [Part 7](./fedora-geostack-part-7-reverse-proxy.md): Configuring Nginx as a Reverse-Proxy
+  * [Part 8](./fedora-geostack-part-8-ftp.md): Configuring Pure-FTPd

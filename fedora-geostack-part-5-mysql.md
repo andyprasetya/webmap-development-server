@@ -217,3 +217,6 @@ Sampai tahap ini, Anda berarti sudah memiliki 2 database server yang berjalan, y
   * [Part 3](./fedora-geostack-part-3-geoserver.md): GeoServer Installation / Configuration
   * [Part 4](./fedora-geostack-part-4-postgis.md): Configuring PostgreSQL and PostGIS
   * Part 5: Configuring MySQL Database (this file)
+  * [Part 6](./fedora-geostack-part-6-php-nginx.md): Configuring PHP, PHP-FPM and Nginx
+  * [Part 7](./fedora-geostack-part-7-reverse-proxy.md): Configuring Nginx as a Reverse-Proxy
+  * [Part 8](./fedora-geostack-part-8-ftp.md): Configuring Pure-FTPd

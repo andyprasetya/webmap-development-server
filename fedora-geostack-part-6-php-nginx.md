@@ -366,5 +366,16 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   [rinjani@nusantara ~]$ sudo rm -rf /usr/share/nginx/html/phptest.php
   ```
   
-  
-  
+Hingga tahap ini, **Webmap Development Server** Anda sudah dapat berfungsi sebagai **database server** dan **HTTP server** yang (juga) mendukung _modern API-style_. Pada tahap berikutnya, kita akan mengulas _reverse-proxy_ di Nginx. Terima kasih sudah bersabar untuk mengikuti terus tutorial ini!
+
+> Instalasi dan konfigurasi sebuah _tech-stack_ adalah sebuah _craftmanship_ -- semakin mendalam Anda menggali bagaimana sebuah komponen bekerja dalam ekosistemnya, _in-and-out_, maka semakin paham pula Anda terhadap seluruh ketidaksempurnaan yang pernah Anda jumpai dalam hidup.
+
+### Related parts:
+  * [Part 1](./README.md): Post-Installation / OS Configuration
+  * [Part 2](./fedora-geostack-part-2-apache-tomcat.md): Configuring Apache Tomcat for GeoServer
+  * [Part 3](./fedora-geostack-part-3-geoserver.md): GeoServer Installation / Configuration
+  * [Part 4](./fedora-geostack-part-4-postgis.md): Configuring PostgreSQL and PostGIS
+  * [Part 5](./fedora-geostack-part-5-mysql.md): Configuring MySQL Database
+  * Part 6: Configuring PHP, PHP-FPM and Nginx (this file)
+  * [Part 7](./fedora-geostack-part-7-reverse-proxy.md): Configuring Nginx as a Reverse-Proxy
+  * [Part 8](./fedora-geostack-part-8-ftp.md): Configuring Pure-FTPd

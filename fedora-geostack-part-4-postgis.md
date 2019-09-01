@@ -522,3 +522,6 @@ _Exhausting?_ _Tedious?_ _Or so overwhelming?_ Semua! Saya sendiri merasa bahwa 
   * [Part 3](./fedora-geostack-part-3-geoserver.md): GeoServer Installation / Configuration
   * Part 4: Configuring PostgreSQL and PostGIS (this file)
   * [Part 5](./fedora-geostack-part-5-mysql.md): Configuring MySQL Database
+  * [Part 6](./fedora-geostack-part-6-php-nginx.md): Configuring PHP, PHP-FPM and Nginx
+  * [Part 7](./fedora-geostack-part-7-reverse-proxy.md): Configuring Nginx as a Reverse-Proxy
+  * [Part 8](./fedora-geostack-part-8-ftp.md): Configuring Pure-FTPd

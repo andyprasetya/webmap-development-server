@@ -9,7 +9,7 @@ Tapi kalau nggak dimulai sekarang juga, ya kapan terwujudnya? _Keburu disamber_ 
 ![Ecosystem](./img/dev-ecosystem.png)
 
 > dimana:
-> _Development workstation_ IP _address_: **192.168.1.2/24**, OS: **Windows 10**. Pada _workstation_ ini akan terpasang beberapa _software_ yang umum digunakan untuk webmap _development_, seperti [**Quantum GIS**](https://qgis.org/en/site/forusers/download.html), [**PostGIS Shapefile and DBF Loader/Exporter**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), [**Microsoft Visual Studio Code**](https://code.visualstudio.com/download) (atau [**Notepad++**](https://notepad-plus-plus.org/)), [**Postman**](https://www.getpostman.com/downloads/), [**PgAdmin**](https://www.pgadmin.org/download/pgadmin-4-windows/), [**MySQL Workbench**](https://dev.mysql.com/downloads/workbench/), [**SQLite DB Browser**](https://sqlitebrowser.org/), [**PuTTy**](https://www.putty.org/) dan [**WinSCP**](https://winscp.net/eng/download.php).
+> _Development workstation_ IP _address_: **192.168.1.2/24**, OS: **Windows 10**. Pada _workstation_ ini akan terpasang beberapa _software_ yang umum digunakan untuk webmap _development_, seperti [**Quantum GIS**](https://qgis.org/en/site/forusers/download.html), [**PostGIS Shapefile and DBF Loader/Exporter**](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), [**Microsoft Visual Studio Code**](https://code.visualstudio.com/download) (atau [**Notepad++**](https://notepad-plus-plus.org/)), [**Postman**](https://www.getpostman.com/downloads/), [**PgAdmin**](https://www.pgadmin.org/download/pgadmin-4-windows/), [**MySQL Workbench**](https://dev.mysql.com/downloads/workbench/), [**SQLite DB Browser**](https://sqlitebrowser.org/), [**MongoDB Compass Community Edition**](https://www.mongodb.com/download-center/compass), [**PuTTy**](https://www.putty.org/) dan [**WinSCP**](https://winscp.net/eng/download.php).
 
 > Webmap Development Server IP _address_: **192.168.1.23/24**, hostname: **nusantara**, default user: **rinjani**.
 
@@ -211,3 +211,6 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   * [Part 3](./fedora-geostack-part-3-geoserver.md): GeoServer Installation / Configuration
   * [Part 4](./fedora-geostack-part-4-postgis.md): Configuring PostgreSQL and PostGIS
   * [Part 5](./fedora-geostack-part-5-mysql.md): Configuring MySQL Database
+  * [Part 6](./fedora-geostack-part-6-php-nginx.md): Configuring PHP, PHP-FPM and Nginx
+  * [Part 7](./fedora-geostack-part-7-reverse-proxy.md): Configuring Nginx as a Reverse-Proxy
+  * [Part 8](./fedora-geostack-part-8-ftp.md): Configuring Pure-FTPd
