@@ -1,4 +1,4 @@
-### Part 3: GeoServer Installation / Configuration
+## Part 3: GeoServer Installation / Configuration
 
 Berikut ini adalah langkah-langkah instalasi GeoServer pada Apache Tomcat.
 > **Asumsi \#1**: Apache Tomcat sudah terinstall (mengacu pada Part 1), dan sudah berjalan sebagai _service daemon_ (mengacu pada [Part 2](./fedora-geostack-part-2-apache-tomcat.md)).

@@ -1,4 +1,4 @@
-### Part 4: Configuring PostgreSQL and PostGIS
+## Part 4: Configuring PostgreSQL and PostGIS
 
 Berikut ini adalah langkah-langkah konfigurasi PostgreSQL/PostGIS setelah prosedur instalasinya selesai dilaksanakan pada [Part 1](./README.md).
 

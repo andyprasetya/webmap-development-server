@@ -1,4 +1,4 @@
-### Part 5: Configuring MySQL Database
+## Part 5: Configuring MySQL Database
 
 Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosedur instalasinya selesai dilaksanakan pada [Part 1](./README.md). Tapi sebelumnya, ada baiknya juga Anda _download_ dulu contoh datanya, dengan _command_:
 
