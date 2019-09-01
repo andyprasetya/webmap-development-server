@@ -8,7 +8,7 @@ Salah-satu komponen yang dapat menjembatani webmap frontend (tentu saja ini: HTM
 
 Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke server sebagai rinjani melalui SSH dari workstation Anda:
 
-#### 1. _Editing_ php.ini file
+### 1. _Editing_ php.ini file
 
   Langkah pertama adalah membuat direktori untuk penampungan **PHP_SESSION** _files_, dan diikuti dengan mengedit file ```php.ini``` yang _by default_ berada di direktori ```/etc```. _Commands_-nya:
   
@@ -75,7 +75,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
   _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**.
   
-#### 2. PHP-FPM (PHP FastCGI Process Manager)
+### 2. PHP-FPM (PHP FastCGI Process Manager)
 
   Setelah file ```php.ini``` diedit, maka **PHP-FPM**-nya harus diaktifkan lewat **systemd**:
   
@@ -107,7 +107,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
   Kalau _tests_ di atas sudah menampilkan informasi bahwa modul-modul tersebut _support_-nya _enabled_, maka PHP Anda sudah siap.
   
-#### 3. _Editing_ nginx.conf file
+### 3. _Editing_ nginx.conf file
 
   Setting ```php.ini``` memang _njlimet_ (rumit). Yang berikut ini bakalan lebih _njlimet_ lagi, yaitu setting Nginx pada file ```nginx.conf```:
   
@@ -117,7 +117,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
   Yang diedit/ditambah adalah:
   
-  3.1. types_hash_max_size
+  #### 3.1. types_hash_max_size
   
   Yang tadinya:
   
@@ -135,7 +135,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   ...
   ```
   
-  3.2. client_max_body_size
+  #### 3.2. client_max_body_size
   
   Tambahkan _entry_ ```client_max_body_size``` di bawah ```types_hash_max_size``` supaya _user_ bisa meng-_upload file_ hingga **200 MB**:
   
@@ -147,11 +147,11 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   ```
   
   
-#### 4. phpinfo()
+### 4. phpinfo()
 
   --
   
-#### 5. PHP and Modern API-Style
+### 5. PHP and Modern API-Style
 
   --
   
