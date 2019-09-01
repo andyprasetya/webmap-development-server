@@ -1,4 +1,4 @@
-### Part 6: Configuring PHP, PHP-FPM and Nginx
+## Part 6: Configuring PHP, PHP-FPM and Nginx
 
 Salah-satu komponen yang dapat menjembatani webmap frontend (tentu saja ini: HTML) dengan database yang paling populer adalah PHP. Pada bagian ini kita akan membahas tentang bagaimana konfigurasinya dan bagaimana menghubungkannya dengan HTTP server yang akan kita gunakan, yaitu Nginx.
 
@@ -146,7 +146,109 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   ...
   ```
   
+  #### 3.3. index
   
+  Masuk ke blok ```server { ... }```, ubah index yang tadinya:
+  
+  ```
+  ...
+  root /usr/share/nginx/html;
+  index index.html index.htm;
+  ...
+  ```
+  
+  menjadi:
+  
+  ```
+  ...
+  root /usr/share/nginx/html;
+  index index.php index.html index.htm;
+  ...
+  ```
+  
+  #### 3.4. PHP FastCGI
+  
+  Sambil mulai membahas strategi reverse-proxy pada Nginx, masih di blok ```server { ... }```, tambahkan:
+  
+  ```
+  ...
+  proxy_buffering     off;
+  proxy_buffer_size   128k;
+  proxy_buffers       128k;
+  ...
+  ```
+  
+  sebagai proxy buffer directives yang berlaku secara global.
+  
+  Kemudian tambahkan directives untuk PHP FastCGI-nya:
+  
+  ```
+  ...
+  location / {
+  }
+  ...
+  ```
+  
+  menjadi:
+  
+  ```
+  ...
+  location / {
+  }
+
+  location ~ [^/]\.php(/|$) {
+    try_files $uri =404;
+    fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+    if (!-f $document_root$fastcgi_script_name) {
+      return 404;
+    }
+    fastcgi_param HTTP_PROXY "";
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi_params;
+    fastcgi_param  SCRIPT_FILENAME   /usr/share/nginx/html$fastcgi_script_name;
+  }
+  ...
+  ```
+  
+  Dan akhirnya tambahkan directives berikut ini di akhir blok ```server { ... }```:
+  
+  ```
+  ...
+  location ~ /\.ht {
+    deny all;
+  }
+  ...
+  ```
+  
+  _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**.
+  
+  #### 3.5. systemd dan firewalld untuk Nginx
+  
+  Untuk mengaktifkan Nginx sebagai service, jalankan commands:
+  
+  ```
+  [rinjani@nusantara ~]$ sudo chmod -R 777 /usr/share/nginx/html
+  
+  [rinjani@nusantara ~]$ sudo systemctl enable nginx.service
+  
+  [rinjani@nusantara ~]$ sudo firewall-cmd --permanent --zone=FedoraServer --add-port=80/tcp
+  
+  [rinjani@nusantara ~]$ sudo firewall-cmd --reload
+  
+  [rinjani@nusantara ~]$ sudo firewall-cmd --permanent --zone=FedoraServer --add-port=443/tcp
+  
+  [rinjani@nusantara ~]$ sudo firewall-cmd --reload
+  
+  [rinjani@nusantara ~]$ sudo systemctl restart php-fpm.service
+  
+  [rinjani@nusantara ~]$ sudo systemctl start nginx.service
+  ```
+  
+  Buka URL **```http://192.168.1.23```** di browser Anda, maka Nginx _test page_ akan muncul.
+  
+  ![Nginx PHP](./img/nginx-01-test-page.jpg)
+
 ### 4. phpinfo()
 
   --

@@ -19,7 +19,7 @@ Tapi kalau nggak dimulai sekarang juga, ya kapan terwujudnya? _Keburu disamber_ 
 
 > Untuk menjalankan langkah-langkah _post-installation_, _ecosystem_ ini harus terhubung dengan Internet!
 
-### Part 1: Post-Installation / OS Configuration
+## Part 1: Post-Installation / OS Configuration
 
 #### 1. Login sebagai _administrator_ user
 
