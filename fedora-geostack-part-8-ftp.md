@@ -2,7 +2,7 @@
 
 Untuk mempermudah _editing_/_uploading_ files ke server, lebih baik kita manfaatkan sebuah **FTP server**, yaitu **Pure-FTPd**. Kalau di [**Part 1**](./README.md) kita sudah menyelesaikan instalasinya, berikut ini adalah langkah-langkah konfigurasinya.
 
-> _Users_ yang akan kita _create_ ada 2 jenis, yaitu _user_ untuk mengakses file HTML/PHP/JavaScript/CSS/dll. di direktori **```/usr/share/nginx/html```** dan _user_ untuk mengakses **Node.JS _projects_** di direktori **```/home/rinjani/nodeapps```**.
+> _Users_ yang akan kita _create_ dalam Pure-FTPd ada 2 jenis, yaitu _user_ untuk mengakses file HTML/PHP/JavaScript/CSS/dll. di direktori **```/usr/share/nginx/html```** dan _user_ untuk mengakses **Node.JS _projects_** di direktori **```/home/rinjani/nodeapps```**.
 
   ### 1. _Create group_ dan _user_
 
