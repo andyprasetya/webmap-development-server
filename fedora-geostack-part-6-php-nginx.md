@@ -265,13 +265,104 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   <?php phpinfo(); ?>
   ```
   
-  _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**.
+  _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**. Lalu ubah _permission_-nya menjadi **777** saja, dengan _command_:
+  
+  ```
+  [rinjani@nusantara ~]$ sudo chmod 777 /usr/share/nginx/html/phptest.php
+  ```
   
   Buka URL **```http://192.168.1.23/phptest.php```** di _browser_ Anda, maka PHP _info page_ akan muncul.
   
   ![Nginx PHP](./img/nginx-02-php-test.jpg)
   
+  Sampai pada tahap ini, **PHP** dan **PHP-FPM** sudah terintegrasi dengan **Nginx HTTP server**, sehingga dapat mengakses _database_ dan layanan data lainnya, seperti **WMS/WMTS/WFS services_**.
+  
 ### 5. PHP and Modern API-Style
 
-  --
+  Sekarang adalah eranya **API (Application Programming Interface)**. Salah satu implementasi dari API adalah **Web Service**, yaitu layanan data (_data service_) yang "dibungkus" atau "ditumpangkan" dalam layanan **HTTP** (atau **HTTPS**). Dalam terminologi Web Service, kita sering mendengar istilah **"endpoint"**.
+  
+  _There's nothing new under the sun_. Sesuatu yang terlihat kompleks dan "canggih" itu ternyata (masih saja) gabungan dari hal-hal yang sederhana dan sangat mendasar. Yang dimaksud dengan _endpoint_ pada _modern API_ adalah **URL** yang dituju aplikasi untuk mendapatkan data tertentu. Misal: ```http://192.168.1.23/webservice/points``` adalah endpoint yang outputnya GeoJSON point. Sekarang masalahnya sederhana saja: _endpoint_ itu kalau bisa ya berformat sederhana dan tidak "berpihak" pada salah satu jenis bahasa pemrograman saja. Kondisi Webmap Development Server kita sekarang, kalau mau membuat _endpoint_, ya di belakangnya masih harus menuliskan **.php** -- misal: ```http://192.168.1.23/webservice/points.php```.
+  
+  Nah, webmap moderen itu ya juga menggunakan **Web Service**, misalnya untuk mendapatkan **data GeoJSON**. Pada pemrograman _frontend_-nya, penulisan _endpoint_ sudah cenderung nggak akan mempedulikan _engine_ apa yang bekerja dalam _endpoint_-nya. Misal, kalau _frontend_ butuh data **points**, ya mengarahnya ke ```http://192.168.1.23/webservice/points```, bukan ke ```http://192.168.1.23/webservice/points.php```. Kita lihat segi positifnya saja, dengan menerapkan API-style seperti ini, tentu saja akan lebih membebaskan backend untuk memilih dan mengembangkan teknologi under the hood-nya. Misal, kalau webmap-nya sudah sangat kompleks dan traffic-nya tinggi, dan backend (yang pakai PHP) sudah mulai kepayahan, ya backend bisa switching teknologinya (misal pakai Node atau Golang) tanpa mengubah endpoints-nya sama-sekali.
+  
+  Lalu apa langkah awal yang harus kita lakukan supaya Webmap Development Server bisa fleksibel dengan kebutuhan modern API-style? Ya mode akses PHP di Nginx-nya dibuat extensionless. Jadi nanti kalau kita mengakses -- misalnya -- ```http://192.168.1.23/webservice/points``` ya berarti sama saja dengan mengakses ```http://192.168.1.23/webservice/points.php```.
+  
+  Langkah-langkahnya adalah sebagai berikut:
+  
+  ```
+  [rinjani@nusantara ~]$ sudo systemctl stop php-fpm.service
+  
+  [rinjani@nusantara ~]$ sudo systemctl stop nginx.service
+  
+  [rinjani@nusantara ~]$ sudo nano /etc/nginx/nginx.conf
+  ```
+  
+  dan ubah blok:
+  
+  ```
+  ...
+  location / {
+  }
+  
+  location ~ [^/]\.php(/|$) {
+    try_files $uri =404;
+    fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+    if (!-f $document_root$fastcgi_script_name) {
+      return 404;
+    }
+    fastcgi_param HTTP_PROXY "";
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi_params;
+    fastcgi_param  SCRIPT_FILENAME   /usr/share/nginx/html$fastcgi_script_name;
+  }
+  ...
+  ```
+  
+  menjadi:
+  
+  ```
+  ...
+  location / {
+    try_files $uri $uri.html $uri/ @extensionless-php;
+  }
+  
+  location ~ [^/]\.php(/|$) {
+    try_files $uri =404;
+    fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+    if (!-f $document_root$fastcgi_script_name) {
+      return 404;
+    }
+    fastcgi_param HTTP_PROXY "";
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi_params;
+    fastcgi_param  SCRIPT_FILENAME   /usr/share/nginx/html$fastcgi_script_name;
+  }
+  
+  location @extensionless-php {
+    rewrite ^(.*)$ $1.php last;
+  }
+  ...
+  ```
+  
+  _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**. Lalu aktifkan lagi PHP-FPM dan Nginx-nya:
+  
+  ```
+  [rinjani@nusantara ~]$ sudo systemctl start php-fpm.service
+  
+  [rinjani@nusantara ~]$ sudo systemctl start nginx.service
+  ```
+  
+  Kalau pada bagian sebelumnya Anda sudah mencoba membuat PHP test page di URL **```http://192.168.1.23/phptest.php```**, maka coba sekarang Anda buka URL **```http://192.168.1.23/phptest```** (perhatikan: tanpa **.php**) di _browser_ Anda, maka PHP _info page_ akan tetap muncul, tanpa harus menggunakan **.php** pada URL-nya (lihat _box_ merah).
+  
+  ![Nginx PHP](./img/nginx-03-extensionless-php.jpg)
+  
+  Dan akhirnya, kalau sudah beres semua, delete saja file ```phptest.php``` dari root-nya Nginx, supaya sistemnya tetap bersih.
+  
+  ```
+  [rinjani@nusantara ~]$ sudo rm -rf /usr/share/nginx/html/phptest.php
+  ```
+  
+  
   
