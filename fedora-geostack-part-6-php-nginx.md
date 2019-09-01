@@ -223,7 +223,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
   _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**.
   
-  > Untuk lebih lengkapnya, Anda bisa melihat contoh [**nginx.conf**](./files/nginx-part-6-conf) ini.
+  > Untuk lebih lengkapnya, Anda bisa melihat contoh [**nginx.conf**](./files/nginx-part-6.conf) ini.
   
   #### 3.5. systemd dan firewalld untuk Nginx
   
@@ -353,6 +353,8 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
   [rinjani@nusantara ~]$ sudo systemctl start nginx.service
   ```
+  
+  > Untuk lebih lengkapnya, Anda bisa melihat contoh [**nginx.conf**](./files/nginx-extensionless-php.conf) ini.
   
   Kalau pada bagian sebelumnya Anda sudah mencoba membuat PHP test page di URL **```http://192.168.1.23/phptest.php```**, maka coba sekarang Anda buka URL **```http://192.168.1.23/phptest```** (perhatikan: tanpa **.php**) di _browser_ Anda, maka PHP _info page_ akan tetap muncul, tanpa harus menggunakan **.php** pada URL-nya (lihat _box_ merah).
   
