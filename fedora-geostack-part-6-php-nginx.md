@@ -2,9 +2,9 @@
 
 Salah-satu komponen yang dapat menjembatani webmap frontend (tentu saja ini: HTML) dengan database yang paling populer adalah PHP. Pada bagian ini kita akan membahas tentang bagaimana konfigurasinya dan bagaimana menghubungkannya dengan HTTP server yang akan kita gunakan, yaitu Nginx.
 
-> Sedikit OOT, banyak developer (yang biasanya saat ini -- tahun 2019 -- \< 30) yang memandang-rendah terhadap PHP. Issue yang kebanyakan mereka angkat adalah performa (terutama pada saat sistemnya diakses oleh ratusan, ribuan, bahkan jutaan users). Dan masih banyak lagi issues lain yang dimanfaatkan oleh para PHP-haters itu untuk bad-mouthing about PHP di Internet.
+> Sedikit OOT, banyak developer yang memandang-rendah terhadap PHP. Mereka bilang PHP itu bahasa pemrogramannya _newbies_, _nggak_ mutu, _sucks_ dan ketinggalan jaman. _Issue_ yang kebanyakan mereka angkat adalah performa (terutama pada saat sistemnya diakses oleh ratusan, ribuan, bahkan jutaan users). Dan masih banyak lagi _issues_ lain yang dimanfaatkan oleh para _PHP-haters_ itu untuk _bad-mouthing about_ PHP di Internet.
 
-> Tapi bagi saya (saya berharap Anda juga) tidak. Saya bukan PHP-hater. Saya jadi PHP-user saja. (Webmap) development pada prinsipnya adalah proses penyelesaian masalah, yang mana hasil akhirnya adalah sebuah solusi. PHP (dan sama juga dengan bahasa-bahasa pemrograman lainnya) itu pada akhirnya hanya menjadi sebuah alat untuk mencapai tujuan akhir. Pada prosesnya, yang penting juga bukan PHP-nya juga koq, tapi arsitektur dan algoritma yang diterapkan dalam setiap business logic-nya, bahkan hingga komponen terkecil dan paling sederhana sekalipun. Saya nggak malu pakai PHP, karena saya pikir reputasi saya akan lebih memalukan lagi jika webmap saya nggak jalan.
+> Tapi bagi saya (saya berharap Anda juga) tidak. Saya bukan _PHP-hater_. Saya jadi _PHP-user_ saja. (Webmap) _development_ pada prinsipnya adalah proses penyelesaian masalah, yang mana hasil akhirnya adalah sebuah solusi. PHP (dan sama juga dengan bahasa-bahasa pemrograman lainnya) itu pada akhirnya hanya menjadi sebuah alat untuk mencapai tujuan akhir. Pada prosesnya, yang penting juga bukan PHP-nya juga _koq_, tapi arsitektur dan algoritma yang diterapkan dalam setiap _business logic_-nya, bahkan hingga komponen terkecil dan paling sederhana sekalipun. Saya nggak malu pakai PHP, karena saya pikir reputasi saya akan lebih memalukan lagi jika webmap saya nggak jalan.
 
 Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke server sebagai rinjani melalui SSH dari workstation Anda:
 
@@ -20,7 +20,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   [rinjani@nusantara ~]$ sudo nano /etc/php.ini
   ```
   
-  > Sebagai catatan, pada file ```php.ini```, comments selalu diawali dengan karakter **;** (titik-koma / _semicolon_).
+  > Sebagai catatan, pada file ```php.ini```, **comments** selalu diawali dengan karakter **;** (titik-koma / _semicolon_).
   
   Tambahkan, atau ganti _values_ pada _entries_ berikut ini, yang akan ditampilkan dalam sebuah _table_:
   
@@ -71,7 +71,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   ...
   ```
   
-  > Jadi, ada values yang pakai **"..."** (petik-ganda / _double-quotes_), dan ada yang tidak. Cermati format _values_-nya.
+  > Jadi, ada _values_ yang pakai **"..."** (petik-ganda / _double-quotes_), dan ada yang tidak. Cermati format _values_-nya.
   
   _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**.
   
@@ -148,7 +148,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
   #### 3.3. index
   
-  Masuk ke blok ```server { ... }```, ubah index yang tadinya:
+  Masuk ke blok ```server { ... }```, ubah **index** yang tadinya:
   
   ```
   ...
@@ -168,7 +168,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
   #### 3.4. PHP FastCGI
   
-  Sambil mulai membahas strategi reverse-proxy pada Nginx, masih di blok ```server { ... }```, tambahkan:
+  Sambil mulai membahas strategi **_reverse-proxy_** pada Nginx, masih di blok ```server { ... }```, tambahkan:
   
   ```
   ...
@@ -178,9 +178,9 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   ...
   ```
   
-  sebagai proxy buffer directives yang berlaku secara global.
+  sebagai _proxy buffer directives_ yang berlaku secara global.
   
-  Kemudian tambahkan directives untuk PHP FastCGI-nya:
+  Kemudian tambahkan _directives_ untuk **PHP FastCGI**-nya:
   
   ```
   ...
@@ -211,7 +211,7 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   ...
   ```
   
-  Dan akhirnya tambahkan directives berikut ini di akhir blok ```server { ... }```:
+  Dan akhirnya tambahkan _directives_ berikut ini di akhir blok ```server { ... }```:
   
   ```
   ...
@@ -223,9 +223,11 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   
   _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**.
   
+  > Untuk lebih lengkapnya, Anda bisa melihat contoh [**nginx.conf**](./files/nginx-part-6-conf) ini.
+  
   #### 3.5. systemd dan firewalld untuk Nginx
   
-  Untuk mengaktifkan Nginx sebagai service, jalankan commands:
+  Untuk mengaktifkan Nginx sebagai **service**, jalankan _commands_:
   
   ```
   [rinjani@nusantara ~]$ sudo chmod -R 777 /usr/share/nginx/html
@@ -245,13 +247,29 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   [rinjani@nusantara ~]$ sudo systemctl start nginx.service
   ```
   
-  Buka URL **```http://192.168.1.23```** di browser Anda, maka Nginx _test page_ akan muncul.
+  Buka URL **```http://192.168.1.23```** di _browser_ Anda, maka Nginx _test page_ akan muncul.
   
   ![Nginx PHP](./img/nginx-01-test-page.jpg)
 
 ### 4. phpinfo()
 
-  --
+  Kalau pada bagian sebelumnya kita test Nginx-nya untuk menampilkan **_default_ HTML file** (index.html) sebagai _test page_, maka langkah selanjutnya adalah _test_ PHP-nya. Ini mudah saja, _create file_ ber-_extension_ **.php** dalam _root directory_ Nginx, yaitu di ```/usr/share/nginx/html```.
+  
+  ```
+  [rinjani@nusantara ~]$ sudo nano /usr/share/nginx/html/phptest.php
+  ```
+  
+  Dalam file yang masih kosong ini tuliskan saja:
+  
+  ```
+  <?php phpinfo(); ?>
+  ```
+  
+  _Save_ perubahannya dengan menekan **Ctrl+O** lalu **\<Enter\>** untuk mengkonfirmasi **Yes**, dan _exit_ dari **_nano editor_** dengan menekan **Ctrl-X**.
+  
+  Buka URL **```http://192.168.1.23/phptest.php```** di _browser_ Anda, maka PHP _info page_ akan muncul.
+  
+  ![Nginx PHP](./img/nginx-02-php-test.jpg)
   
 ### 5. PHP and Modern API-Style
 
