@@ -162,7 +162,7 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   > Sebaiknya, cek terlebih dahulu versi termutakhir di situsnya MySQL.
   
   ```
-  [rinjani@nusantara ~]$ sudo rpm -Uvh https://dev.mysql.com/get/mysql80-community-release-fc29-2.noarch.rpm
+  [rinjani@nusantara ~]$ sudo rpm -Uvh https://dev.mysql.com/get/mysql80-community-release-fc30-1.noarch.rpm
   
   [rinjani@nusantara ~]$ sudo dnf update
   
