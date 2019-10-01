@@ -174,7 +174,25 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   Biar nggak jadi dinosaurus, _nge-hype_ sedikit pasang **NoSQL** juga: **MongoDB**.
   
   ```
-  [rinjani@nusantara ~]$ sudo dnf install mongodb mongodb-server mongo-tools
+  [rinjani@nusantara ~]$ sudo nano /etc/yum.repos.d/mongodb.repo
+  ```
+  dan masukkan entry:
+  
+  ```
+  [Mongodb]
+  name=MongoDB Repository
+  baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/4.0/x86_64/
+  gpgcheck=1
+  enabled=1
+  gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc
+  ```
+  
+  Save + exit, lalu update dan install MongoDB nya:
+  
+  ```
+  [rinjani@nusantara ~]$ sudo dnf update
+  
+  [rinjani@nusantara ~]$ sudo dnf install mongodb-org mongodb-org-server mongodb-org-mongos mongodb-org-shell mongodb-org-tools
   ```
   
   ##### 3.11. Install Apache Tomcat:
