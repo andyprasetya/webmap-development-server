@@ -139,10 +139,16 @@ Apakah hanya GeoServer saja? Tidak! Suatu saat Anda akan, atau malah sekarang su
   [root@nusantara rinjani]# chown -R tomcat:tomcat /var/lib/tomcat/webapps/print-servlet-3.9.0/print-apps
   ```
   
-  Ada baiknya juga, sebelum Apache Tomcat-nya kita _start_, dibersihkan dulu _application cache_-nya, dengan _command_:
+  Ada baiknya juga, sebelum Apache Tomcat-nya kita _start_, dibersihkan dulu home directory dan _application cache_-nya, dengan _command_:
   
   ```
   [root@nusantara rinjani]# rm -rf /var/cache/tomcat/work/Catalina/localhost/print-servlet-3.9.0
+  
+  [root@nusantara rinjani]# rm -rf print-apps
+  
+  [root@nusantara rinjani]# rm -rf print-apps.zip
+  
+  [root@nusantara rinjani]# rm -rf print-servlet-3.9.0.war
   ```
   
   Baru kemudian _start_ Apache Tomcat-nya:
