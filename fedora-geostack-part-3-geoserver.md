@@ -52,6 +52,14 @@ Berikut ini adalah langkah-langkah instalasi GeoServer pada Apache Tomcat.
   
   [rinjani@nusantara ~]$ sudo rm -rf /var/lib/tomcat/webapps/geoserver.war
   
+  [rinjani@nusantara ~]$ sudo rm -rf geoserver-[version]-war.zip
+  
+  [rinjani@nusantara ~]$ sudo rm -rf GPL.txt
+  
+  [rinjani@nusantara ~]$ sudo rm -rf LICENSE.txt
+  
+  [rinjani@nusantara ~]$ sudo rm -rf target
+  
   [rinjani@nusantara ~]$ sudo systemctl start tomcat.service
   ```
   
