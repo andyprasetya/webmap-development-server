@@ -32,9 +32,6 @@ Stop OOT-nya, langsung mulai kerja saja. Asumsikan saja Anda sudah login ke serv
   **upload_max_filesize** | ```2M``` | ```200M``` | -
   **date.timezone** | ```disabled, empty``` | ```"Asia/Jakarta"``` | ```uncomment```
   **pdo_mysql.default_socket** | ```empty``` | ```/var/lib/mysql/mysql.sock``` | -
-  **mysql.default_port** | ```empty``` | ```3306``` | N/A in Fedora 30
-  **mysql.default_socket** | ```empty``` | ```/var/lib/mysql/mysql.sock``` | N/A in Fedora 30
-  **mysql.default_host** | ```empty``` | ```localhost``` | N/A in Fedora 30
   **mysqli.default_socket** | ```empty``` | ```/var/lib/mysql/mysql.sock``` | -
   **mysqli.default_host** | ```empty``` | ```localhost``` | -
   **session.save_path** | ```disabled, empty``` | ```"/tmp/phpsessions"``` | ```uncomment```
