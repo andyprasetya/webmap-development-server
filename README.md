@@ -88,7 +88,7 @@ Setelah server di-_reboot_, _login_ lagi, dan langkah pertama yang dilakukan ada
   ##### 3.1. Install base components:
   
   ```
-  [rinjani@nusantara ~]$ sudo dnf install wget curl git glibc binutils gcc libaio kernel-headers kernel-devel virtualenv
+  [rinjani@nusantara ~]$ sudo dnf install git binutils gcc kernel-headers kernel-devel virtualenv
   ```
   
   ##### 3.2. Install OpenJDK:
