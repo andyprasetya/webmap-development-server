@@ -39,41 +39,45 @@ Untuk mempermudah _editing_/_uploading_ files ke server, lebih baik kita manfaat
   ### 3. Create virtual user
   
   ```
-  [rinjani@nusantara ~]$ sudo pure-pwconvert >> /etc/pure-ftpd/pureftpd.passwd
+  [rinjani@nusantara ~]$ sudo su
   
-  [rinjani@nusantara ~]$ sudo chmod 600 /etc/pure-ftpd/pureftpd.passwd
+  [root@nusantara rinjani]# pure-pwconvert >> /etc/pure-ftpd/pureftpd.passwd
   
-  [rinjani@nusantara ~]$ sudo ln -s /etc/pure-ftpd/pureftpd.passwd /etc/pureftpd.passwd
+  [root@nusantara rinjani]# chmod 600 /etc/pure-ftpd/pureftpd.passwd
   
-  [rinjani@nusantara ~]$ sudo pure-pw mkdb
+  [root@nusantara rinjani]# ln -s /etc/pure-ftpd/pureftpd.passwd /etc/pureftpd.passwd
   
-  [rinjani@nusantara ~]$ sudo pure-pw useradd webmapdev -u xftp -g xftp -d /usr/share/nginx/html
+  [root@nusantara rinjani]# pure-pw mkdb
   
-  ...create + confirm password...
-  
-  [rinjani@nusantara ~]$ sudo pure-pw mkdb
-  
-  [rinjani@nusantara ~]$ sudo pure-pw useradd nodedev -u rinjani -g rinjani -d /home/rinjani/nodeapps
+  [root@nusantara rinjani]# pure-pw useradd webmapdev -u xftp -g xftp -d /usr/share/nginx/html
   
   ...create + confirm password...
   
-  [rinjani@nusantara ~]$ sudo pure-pw mkdb
+  [root@nusantara rinjani]# pure-pw mkdb
+  
+  [root@nusantara rinjani]# pure-pw useradd nodedev -u rinjani -g rinjani -d /home/rinjani/nodeapps
+  
+  ...create + confirm password...
+  
+  [root@nusantara rinjani]# pure-pw mkdb
   ```
   
   ### 4. Enable service di systemd dan buka port di firewalld
 
   ```
-  [rinjani@nusantara ~]$ sudo systemctl enable pure-ftpd
+  [root@nusantara rinjani]# systemctl enable pure-ftpd
   
-  [rinjani@nusantara ~]$ sudo firewall-cmd --permanent --zone=FedoraServer --add-port=21/tcp
+  [root@nusantara rinjani]# firewall-cmd --permanent --zone=FedoraServer --add-port=21/tcp
   
-  [rinjani@nusantara ~]$ sudo firewall-cmd --reload
+  [root@nusantara rinjani]# firewall-cmd --reload
   
-  [rinjani@nusantara ~]$ sudo firewall-cmd --permanent --zone=FedoraServer --add-port=30000-50000/tcp
+  [root@nusantara rinjani]# firewall-cmd --permanent --zone=FedoraServer --add-port=30000-50000/tcp
   
-  [rinjani@nusantara ~]$ sudo firewall-cmd --reload
+  [root@nusantara rinjani]# firewall-cmd --reload
   
-  [rinjani@nusantara ~]$ sudo systemctl start pure-ftpd
+  [root@nusantara rinjani]# systemctl start pure-ftpd
+  
+  [root@nusantara rinjani]# exit
   ```
 
 Akhirnya, sampai dengan tahap ini, **Webmap Development Server** Anda sudah (juga) memiliki **FTP server** dan siap sepenuhnya untuk "diajak kemanapun".
