@@ -51,7 +51,7 @@ Berikut ini adalah langkah-langkah konfigurasi **MySQL Database** setelah prosed
   mysql> FLUSH PRIVILEGES;
   ```
   
-  > _Password_ sebaiknya **minimal 8 karakter** dan mengandung kombinasi dari _upper_ [A-Z] dan _lower_ [a-z] _case characters_, numerik [0-9] dan alphanumerik [!@#$%^&*()-_=+]. Misal: **```EPeEsGe!4326```**.
+  > _Password_ sebaiknya **minimal 8 karakter** dan mengandung kombinasi dari _upper_ [A-Z] dan _lower_ [a-z] _case characters_, numerik [0-9] dan alphanumerik [!#$%^&*()-_=+]. Misal: **```EPeEsGe!4326```**.
   
   Sebagai catatan, _query_ di atas masih menggunakan **mysql_native_password** untuk mendukung kompatibilitas dengan MySQL _driver_ versi sebelum 8.0. Jika Anda yakin benar bahwa yang akan mengakses pasti menggunakan _driver_ versi 8.0 atau yang lebih baru, _query_-nya:
   
